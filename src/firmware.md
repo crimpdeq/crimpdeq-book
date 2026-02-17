@@ -4,19 +4,21 @@ The firmware is written in async Rust (`no_std`) using [`esp-hal`](https://githu
 
 ## Prerequisites
 
-To build and upload the firmware to your device, ensure you have the following installed:
+To build and upload the firmware, install:
 - [Rust](https://rustup.rs/)
-- The `stable` toolchain with the ESP32-C3 target architecture installed:
+- The `stable` toolchain with the ESP32-C3 target:
   ```bash
   rustup toolchain install stable --component rust-src --target riscv32imc-unknown-none-elf
   ```
 - [`probe-rs`](https://probe.rs/), see [installation instructions](https://probe.rs/docs/getting-started/installation/)
   - OS notes:
-    - Linux: set up udev rules for your debug probe or USB‑Serial device (see [`probe-rs` udev guide](https://probe.rs/docs/getting-started/installation/#udev-rules)).
+    - Linux: set up udev rules for your debug probe or USB-Serial device (see [`probe-rs` udev guide](https://probe.rs/docs/getting-started/installation/#udev-rules)).
     - Windows/macOS: ensure the correct USB drivers are installed and select the appropriate serial port in your tooling.
 
 ## How to Build the Firmware
+
 To build the firmware, run:
+
 ```bash
 cargo build --release
 ```
@@ -31,7 +33,7 @@ If this board was previously used for other projects, erase its flash once:
 probe-rs erase
 ```
 
-> ⚠️ **Note**:  Erasing is only needed once. Avoid erasing routinely, or you will lose your [calibration values](./calibration.md).
+> ⚠️ **Note**: Erasing is only needed once. Avoid erasing routinely, or you will lose your [calibration values](./calibration.md).
 
 ### Build and Flash Your Device
 With a [custom runner](https://doc.rust-lang.org/cargo/reference/config.html#targettriplerunner) configured in `.cargo/config.toml`, you can build, flash, and open a serial monitor with:
@@ -45,7 +47,7 @@ To modify the [log level](https://defmt.ferrous-systems.com/filtering), update t
 DEFMT_LOG=debug cargo run --release
 ```
 
-> ⚠️ **Note**: If your DevKit does not include USB‑Serial‑JTAG, flash via UART by updating the custom runner in `.cargo/config.toml` to use [`espflash`](https://github.com/esp-rs/espflash/tree/main/espflash#cargo-runner) instead of `probe-rs`.
+> ⚠️ **Note**: If your DevKit does not include USB-Serial-JTAG, flash over UART by updating the custom runner in `.cargo/config.toml` to use [`espflash`](https://github.com/esp-rs/espflash/tree/main/espflash#cargo-runner) instead of `probe-rs`.
 
 ### Configuring Environment Variables
 
@@ -65,7 +67,7 @@ This module implements the Bluetooth Low Energy (BLE) functionality:
 - Defines the Progressor service with data point and control point characteristics
 
 ### `progressor`
-The `progressor` module implements the [Tindeq API](https://tindeq.com/progressor_api/), enabling BLE (Bluetooth Low Energy) communication between the ESP32-C3 and a smartphone.
+The `progressor` module implements the [Tindeq API](https://tindeq.com/progressor_api/) used for BLE communication between the ESP32-C3 and a smartphone.
 
 ### Main Tasks
 The `main.rs` file defines several asynchronous tasks that run concurrently:
@@ -73,9 +75,9 @@ The `main.rs` file defines several asynchronous tasks that run concurrently:
   - Initializes the load cell.
   - Handles taring and reads measurements from the sensor.
 - `ble_task`:
-  - Long‑running background task required alongside other BLE tasks.
+  - Long-running background task required alongside other BLE tasks.
 - `gatt_events_task`:
-  - Processes GATT events such as control‑point writes.
+  - Processes GATT events such as control-point writes.
 - `data_processing_task`:
   - Handles sending notifications with data points.
 - `battery_voltage_task`:

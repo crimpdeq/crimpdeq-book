@@ -6,25 +6,25 @@ Meet Crimpdeq, a portable digital force sensor designed for climbers, coaches, a
 
 ## Specs
 
-- Rechargeable battery with USB‑C charging
+- Rechargeable battery with USB-C charging
 - Communicates via Bluetooth Low Energy (BLE)
 - Open-source firmware written in Rust
 - Open-source PCB design
 - Automatic sleep when inactive
-- Compatible with Tindeq Progressor app ([Android](https://play.google.com/store/apps/details?id=com.progressor&hl=es_419) | [iOS](https://apps.apple.com/es/app/tindeq-progressor/id1380412428))
-- Compatible with Frez app (formerly ClimbHarder) ([Android](https://play.google.com/store/apps/details?id=com.holdtight.climbharder&pcampaignid=web_share) | [iOS](https://apps.apple.com/us/app/climbharder-no-hang-training/id6730120024))
-- Sampling frequency: 80 Hz
-- Design load: 1500 N (≈150 kg), full scale
+- Compatible with the Tindeq Progressor app ([Android](https://play.google.com/store/apps/details?id=com.progressor&hl=es_419) | [iOS](https://apps.apple.com/es/app/tindeq-progressor/id1380412428))
+- Compatible with the Frez app (formerly ClimbHarder) ([Android](https://play.google.com/store/apps/details?id=com.holdtight.climbharder&pcampaignid=web_share) | [iOS](https://apps.apple.com/us/app/climbharder-no-hang-training/id6730120024))
+- Sampling rate: 80 Hz
+- Design load: 1500 N (~150 kg), full scale
 - Precision:
-    - 0.05 kg between 0 and 99 kg
-    - 0.1 kg between 100 and 150 kg
-- Operating temperature: 0–40 °C
-- Dimensions: 80 × 90 × 35 mm
+  - 0.05 kg between 0 and 99 kg
+  - 0.1 kg between 100 and 150 kg
+- Operating temperature: 0-40 C
+- Dimensions: 80 x 90 x 35 mm
 - Uses the [Tindeq Progressor API](https://tindeq.com/progressor_api/)
 
-> ⚠️ **Warning**: Some of these specs come from the crane scale, if you use a different one, those values might change.
+> ⚠️ **Warning**: Some values come from the crane scale used in this project. If you use a different scale, those values may change.
 
-## Content of the Book
+## Book Contents
 
 This book covers everything from assembly and calibration to firmware internals and PCB design. Below are the available sections:
 
@@ -35,4 +35,4 @@ This book covers everything from assembly and calibration to firmware internals 
 - [Firmware](./firmware.md)
 - [PCB](./pcb.md)
 
-> ⚠️ **Note**: If you're interested in reproducing this project or giving it a try, please, reach out! You can contact me via email (sergio.gasquez@gmail.com), [X (formerly Twitter)](https://x.com/Sergio_Gasquez) or [Bluesky](https://bsky.app/profile/sergiogasquez.bsky.social).
+> ⚠️ **Note**: If you want to reproduce this project, feel free to reach out by email (sergio.gasquez@gmail.com), [X (formerly Twitter)](https://x.com/Sergio_Gasquez), or [Bluesky](https://bsky.app/profile/sergiogasquez.bsky.social).

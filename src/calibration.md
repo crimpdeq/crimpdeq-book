@@ -1,20 +1,22 @@
 # Calibration
 
-This guide will help you calibrate your Crimpdeq device to ensure accurate weight measurements. The calibration process involves using known weights to establish a reference point for the device's measurements.
+This guide explains how to calibrate Crimpdeq for accurate measurements.
 
-You can calibrate in two ways: with the **Crimpdeq app** or with **nRF Connect**. Its highly recommend to use the Crimpdeq app, it’s simpler and gives you visual feedback through the process.
+You can calibrate in two ways: with the **Crimpdeq app** or **nRF Connect**.
+
+The Crimpdeq app is recommended because it is simpler and gives visual feedback.
 
 ## Using Crimpdeq App
 
 ### Prerequisites
-- Crimpdeq app ready in any of your platform:
-  - You can use the web version that requires no installation: [Crimpdeq web version](https://crimpdeq.github.io/crimpdeq-app/)
-    - Not supported in all the browsers, as it requires WebBluetooth API support, see [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API#browser_compatibility).
-  - Use any of the [built apps of the last version](https://github.com/crimpdeq/crimpdeq-app/releases/latest):
-    - Android: Use the `crimpdeq-app-v<x.y.z>.apk` file on the release and install it on your device.
-    - macOS: Download the `crimpdeq-app-v<x.y.z>-macos.zip` and use it on your macOS.
-    - Windows: Download the `crimpdeq-app-v<x.y.z>-windows.zip` and use it on your Windows.
-    - Linux: Download the `crimpdeq-app-v<x.y.z>-linux.zip` and use it on your Linux.
+- Crimpdeq app on your platform:
+  - Web version (no installation): [Crimpdeq web app](https://crimpdeq.github.io/crimpdeq-app/)
+    - Not all browsers support WebBluetooth. Check [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API#browser_compatibility).
+  - Native builds from the latest release: [crimpdeq-app/releases/latest](https://github.com/crimpdeq/crimpdeq-app/releases/latest)
+    - Android: `crimpdeq-app-v<x.y.z>.apk`
+    - macOS: `crimpdeq-app-v<x.y.z>-macos.zip`
+    - Windows: `crimpdeq-app-v<x.y.z>-windows.zip`
+    - Linux: `crimpdeq-app-v<x.y.z>-linux.zip`
 - A stable mounting point so the device hangs freely and remains still
 - One known weight (ideally near your typical maximum load)
 
@@ -22,7 +24,7 @@ You can calibrate in two ways: with the **Crimpdeq app** or with **nRF Connect**
 
 1. Connect to Crimpdeq
    1. Launch the Crimpdeq app and grant permission to access device location (required for Bluetooth).
-   2. Tap the **Scan** button, this will automatically pair with your device.
+   2. Tap **Scan** to pair with your device.
    3. Once connected, the app shows device info (firmware version, battery, and current calibration).
 2. Add calibration points
    1. Open the **Calibration** tab.
@@ -35,10 +37,10 @@ You can calibrate in two ways: with the **Crimpdeq app** or with **nRF Connect**
 
    ![Calibration Result](./assets/Screenshot_0.jpg)
 
-## Using `nrfConnect`
+## Using nRF Connect
 
 ### Prerequisites
-- nRF Connect installed in any of your platform:
+- nRF Connect installed on your platform:
   - [Android](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp&hl=es_419)
   - [iOS](https://apps.apple.com/es/app/nrf-connect-for-mobile/id1054362403)
   - [Desktop](https://www.nordicsemi.com/Products/Development-tools/nRF-Connect-for-Desktop/Download#infotabs) (Windows, Linux, macOS)
@@ -49,11 +51,11 @@ You can calibrate in two ways: with the **Crimpdeq app** or with **nRF Connect**
 
 1. Connect to Crimpdeq with nRF Connect:
    1. Launch the app and go to the Scanner tab.
-   2. Find the device named "Progressor_7125" and tap "Connect".
+   2. Find your device (for example, `Progressor_7125`) and tap "Connect".
    3. Once connected, the app will display the device’s services and characteristics.
       ![nRF Discovered](./assets/Screenshot_1.png)
 2. Locate the calibration characteristic:
-   1. Expand the "Unknown Service" section.
+   1. Expand **Unknown Service**.
    2. Find the characteristic with UUID: `7e4e1703-1ea6-40c9-9dcc-13d34ffead57`.
       ![Services](./assets/Screenshot_2.png)
 3. Compute the hex value of your known weight:
@@ -74,14 +76,13 @@ You can calibrate in two ways: with the **Crimpdeq app** or with **nRF Connect**
    2. Build the calibration command by prefixing `73` to your hex value.
       - **Example:** For 75.3 kg (`0x4296999a`), send: `734296999a`.
    3. Send this command to the same characteristic (`7e4e1703-1ea6-40c9-9dcc-13d34ffead57`).
-   You can add until 20 calibration points, so repeat this step for higher calibration accuracy.
+   - You can add up to 20 calibration points. Repeat this step if you need higher accuracy.
 6. Verify:
    1. Remove the weight and reattach it.
-   2. The reported value should be within a small tolerance of the known weight. If not, repeat steps 4–5.
+   2. The reported value should be within a small tolerance of the known weight. If not, repeat steps 4-5.
 
 ### Important Notes
 - Units: Some devices expect the calibration value in grams instead of kilograms. If, after calibration, the measured value looks off by a factor of ~100 (e.g., 75.3 kg shows ~0.75), convert your known weight to grams and repeat step 5.
 - Use a weight close to the maximum load you expect to measure (while staying within device limits) for best accuracy.
 - Ensure the device is stable and stationary when sending commands.
 - Perform calibration in a controlled environment (avoid wind, vibration, and temperature swings).
-
