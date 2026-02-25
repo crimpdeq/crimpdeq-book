@@ -1,43 +1,33 @@
-name: CI
+name: Deploy Book
 
 on:
   push:
-  pull_request:
-  workflow_dispatch:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # To push a branch
-      pages: write # To push to a GitHub Pages site
-      id-token: write # To update the deployment status
+      contents: read
+      deployments: write
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: dtolnay/rust-toolchain@v1
-        with:
-          toolchain: nightly
-          components: rust-docs
+      - uses: actions/checkout@v6
 
       - uses: jontze/action-mdbook@v4
         with:
-          token: ${{secrets.GITHUB_TOKEN}}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Check for broken links
-        run: |
-          curl -sSLo linkcheck.sh \
-            https://raw.githubusercontent.com/rust-lang/rust/master/src/tools/linkchecker/linkcheck.sh
-          # Cannot use --all here because of the generated redirect pages aren't available.
-          sh linkcheck.sh book
-
-      - name: Build with mdBook
+      - name: Build book
         run: mdbook build
 
-      - name: Deploy book
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          force_orphan: true
-          publish_dir: ./book
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 2fc7f8105c4c2a621b320949cae125ae
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: pages deploy book --project-name=crimpdeq-book
