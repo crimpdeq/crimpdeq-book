@@ -8,3 +8,6 @@ book
 
 # Cursor
 .cursor/rules/rust-verification.mdc
+
+# Cloudflare Wrangler local state/cache (contains account metadata)
+.wrangler/
