@@ -1,6 +1,42 @@
 # Firmware
-
+<!-- ADD SLEEP INFORMATION -->
 The firmware is written in async Rust (`no_std`) using [`esp-hal`](https://github.com/esp-rs/esp-hal) and a small set of supporting crates.
+
+
+<!-- COPIED FROM prototype -->
+
+## 5. Upload the Firmware
+<!-- Remove this part from here, move the firmware chapter just after assembly as it common to both builds -->
+1. Connect the device with a USB-C cable.
+2. Clone the `crimpdeq-firmware` repository:
+      ```bash
+      git clone https://github.com/crimpdeq/crimpdeq-firmware
+      ```
+      If you do not have Git installed, use the repository's "Code" button and download a ZIP.
+3. Upload the firmware:
+   1. Download a `.bin` file from the desired [GitHub release](https://github.com/crimpdeq/crimpdeq-firmware/releases).
+   2. Flash the device using one of these tools:
+     - Using [esp.huhn.me](https://esp.huhn.me/).
+       1. Click "Connect" and select the serial port for your ESP board.
+       2. Upload your `.bin` file.
+       3. Click "Program".
+         - See [this blog post](https://blog.spacehuhn.com/espwebtool) for more details.
+     - Using [Adafruit ESPTool](https://adafruit.github.io/Adafruit_WebSerial_ESPTool/)
+       1. Click Connect and select the serial port for your ESP board (often named `USB/JTAG serial debug unit...`).
+       2. Upload your `.bin` file at offset `0x10000`.
+       3. Click Program.
+
+   ![Flashing with ESPTool](assets/esptool.png)
+
+   > ⚠️ **Note**: If this method does not work, see the [Firmware chapter](firmware.md). You may need to install prerequisites and flash from the command line.
+4. Check whether the default calibration values work for your scale:
+   1. Connect the device with the Frez or Tindeq app.
+   2. Use the "Live View" option.
+   3. Measure a known weight and verify the value is correct.
+      - If calibration is off, see the [Calibration chapter](calibration.md).
+
+<!-- COPIED FROM prototype -->
+
 
 ## Prerequisites
 
