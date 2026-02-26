@@ -1,4 +1,4 @@
-# Making Your Own Crimpdeq
+# Build Your Crimpdeq
 
 This chapter presents the two Crimpdeq models you can build.
 
@@ -13,7 +13,7 @@ It is the cleanest and easiest version to assemble, and the final result is more
 
 Follow the [Crimpdeq V1](./crimpdeq_v1.md) assembly guide to build this model!
 
-## Prototype Version
+## Prototype
 ![Prototype](../assets/prototype.png)
 
 This model reuses a crane scale case and combines off-the-shelf modules (ESP32-C3 Rust Board + HX711).

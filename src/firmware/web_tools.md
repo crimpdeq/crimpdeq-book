@@ -1,4 +1,4 @@
-# Flashing with Web tools
+# Flash with Web Tools
 
 ## Upload the Firmware
 <!-- Remove this part from here, move the firmware chapter just after assembly as it common to both builds -->

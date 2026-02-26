@@ -1,4 +1,4 @@
-## Using Crimpdeq App
+# Calibrate with Crimpdeq App
 
 ### Prerequisites
 - Crimpdeq app on your platform:
@@ -28,4 +28,3 @@
    1. After adding at least 2 points, the app displays the current calibration curve. Confirm it matches your expectations.
 
    ![Calibration Result](./assets/Screenshot_0.jpg)
-

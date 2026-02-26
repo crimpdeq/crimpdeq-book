@@ -1,4 +1,4 @@
-## Building a Crimpdeq Prototype
+# Prototype Assembly
 
 This chapter explains how to build your own Crimpdeq prototype.
 

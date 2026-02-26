@@ -1,4 +1,4 @@
-## Using nRF Connect
+# Calibrate with nRF Connect
 
 ### Prerequisites
 - nRF Connect installed on your platform:

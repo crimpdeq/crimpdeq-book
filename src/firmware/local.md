@@ -1,4 +1,4 @@
-# Flashing with local env
+# Flash with Local Setup
 
 
 ## Prerequisites

@@ -1,4 +1,4 @@
-# Building a Crimpdeq V1
+# Crimpdeq V1 Assembly
 
 This chapter explains how to assemble your own Crimpdeq V1 using the custom PCB and the custom 3D-printed case.
 

@@ -1,4 +1,4 @@
-# Charging the Battery
+# Battery Charging
 
 To charge the device:
 
