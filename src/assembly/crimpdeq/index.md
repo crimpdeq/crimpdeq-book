@@ -2,7 +2,6 @@
 
 This chapter explains how to assemble your own Crimpdeq V1 using the custom PCB and the custom 3D-printed case.
 
-
 ![Crimpdeq V1](../../assets/crimpdeq_v1_1.png)
 
 ## 1. Required Materials
@@ -12,7 +11,7 @@ This chapter explains how to assemble your own Crimpdeq V1 using the custom PCB 
   - It should be a WH-C07 (or a compatible load cell with similar dimensions).
 - [2000mAh battery](https://www.aliexpress.us/item/3256809404408618.html?spm=a2g0o.order_list.order_list_main.5.1406194d6kJ2h0&gatewayAdapt=glo2usa4itemAdapt)
 - [KCD11 switch](https://www.aliexpress.us/item/2255800787248498.html?spm=a2g0o.order_list.order_list_main.11.1406194d6kJ2h0&gatewayAdapt=glo2usa4itemAdapt)
-- 4x M2.5 screws
+- 4 x M2.5 screws
 
 ## 2. Soldering
 1. Connect the load cell to the PCB:

@@ -26,6 +26,6 @@ See [Flashing with Local Setup](./local.md)
 
 ## Firmware Internals
 
-If you want to understand or modify the firmware, see [Firmware Details](./details.md) chapter
+If you want to understand or modify the firmware, see the [Firmware Details](./details.md) chapter.
 
 If you only want a working device, you can flash the firmware and continue to [Calibration](../calibration/index.md).

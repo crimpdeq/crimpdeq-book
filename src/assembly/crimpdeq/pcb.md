@@ -1,6 +1,5 @@
 # PCB Design
 
-
 ## Revision 1
 The PCB design is maintained in the [`crimpdeq-pcb` repository](https://github.com/crimpdeq/crimpdeq-pcb) and was created with KiCad.
 
@@ -14,5 +13,4 @@ The PCB was sponsored by [PCBWay](https://www.pcbway.com/). Working with them wa
 
 Revision 1 has been tested and works as expected, but there is still room for improvement. See the [Revision 2 issue](https://github.com/crimpdeq/crimpdeq-hardware/issues/2).
 
-You can see the schematic, layout and the rest of the production files on the [Github Releases](https://github.com/crimpdeq/crimpdeq-pcb/releases) of the repository.
-
+You can find the schematic, layout, and production files in the repository [GitHub Releases](https://github.com/crimpdeq/crimpdeq-pcb/releases).

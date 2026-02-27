@@ -11,9 +11,9 @@ To build and upload the firmware, install:
   rustup toolchain install stable --component rust-src --target riscv32imc-unknown-none-elf
   ```
 - [`probe-rs`](https://probe.rs/), see [installation instructions](https://probe.rs/docs/getting-started/installation/)
-    > ⚠️ **Note**: Dependeing on the OS you may need aditional steps:
-    > - Linux: set up udev rules for your debug probe or USB-Serial device (see [`probe-rs` udev guide](https://probe.rs/docs/getting-started/installation/#udev-rules)).
-    > - Windows/macOS: ensure the correct USB drivers are installed and select the appropriate serial port in your tooling.
+  > ⚠️ **Note**: Depending on your OS, you may need extra setup steps:
+  > - Linux: set up udev rules for your debug probe or USB-serial device (see the [`probe-rs` udev guide](https://probe.rs/docs/getting-started/installation/#udev-rules)).
+  > - Windows/macOS: ensure the correct USB drivers are installed and select the appropriate serial port in your tooling.
 
 ## How to Build the Firmware
 
@@ -33,7 +33,7 @@ If this board was previously used for other projects, erase its flash once:
 probe-rs erase
 ```
 
-> ⚠️ **Note**: Erasing is only needed once. Avoid erasing routinely, or you will lose your [calibration values](./calibration.md).
+> ⚠️ **Note**: Erasing is only needed once. Avoid erasing routinely, or you will lose your [calibration values](../calibration/index.md).
 
 ### Build and Flash Your Device
 With a [custom runner](https://doc.rust-lang.org/cargo/reference/config.html#targettriplerunner) configured in `.cargo/config.toml`, you can build, flash, and open a serial monitor with:
@@ -54,5 +54,3 @@ DEFMT_LOG=debug cargo run --release
 If you need to change `DEVICE_ID`, `DEVICE_NAME`, or `DEVICE_VERSION_NUMBER`, update their values in [`.cargo/config.toml`](https://github.com/crimpdeq/crimpdeq-firmware/blob/main/.cargo/config.toml).
 
 After making changes, rebuild and flash the device for the new values to take effect.
-
-#

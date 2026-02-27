@@ -1,6 +1,6 @@
 # Calibrate with Crimpdeq App
 
-### Prerequisites
+## Prerequisites
 - Crimpdeq app on your platform:
   - Web version (no installation): [Crimpdeq web app](https://crimpdeq.github.io/crimpdeq-app/)
     - Not all browsers support WebBluetooth. Check [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API#browser_compatibility).
@@ -12,7 +12,7 @@
 - A stable mounting point so the device hangs freely and remains still
 - At least one known weight (ideally near your typical maximum load)
 
-### Calibration Steps
+## Calibration Steps
 
 1. Connect to your Crimpdeq
    1. Launch the Crimpdeq app and grant permission to access device location (required for Bluetooth).
@@ -27,6 +27,6 @@
 3. Check the result
    1. After adding at least 2 points, the app displays the current calibration curve. Confirm it matches your expectations.
 
-   ![Calibration Result](./assets/Screenshot_0.jpg)
+   ![Calibration Result](../assets/Screenshot_0.jpg)
 
 Adding more calibration points (up to 20) improves measurement accuracy across the full load range.

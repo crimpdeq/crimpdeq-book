@@ -78,7 +78,6 @@ This chapter explains how to build your own Crimpdeq prototype.
    1. Glue the battery holder with silicone. Leave the original battery lid opening free so you can route the two battery wires through it.
    2. Solder the positive wire (red) from the battery holder to a switch/button for power. Then solder the other switch/button pin to `B+` on the ESP32-C3-DevKit-RUST-1.
    3. Solder the negative wire (black) from the battery holder to `B-` on the ESP32-C3-DevKit-RUST-1.
-3. Close the case:
-   1. Ensure all components are securely installed before closing the case.
+3. Close the case after confirming all components are secure.
 
 ![Assembly](../assets/crane_assembly.png)

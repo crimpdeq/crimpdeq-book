@@ -1,6 +1,6 @@
 # Calibrate with nRF Connect
 
-### Prerequisites
+## Prerequisites
 - nRF Connect installed on your platform:
   - [Android](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp&hl=es_419)
   - [iOS](https://apps.apple.com/es/app/nrf-connect-for-mobile/id1054362403)
@@ -8,11 +8,11 @@
 - A stable mounting point so the device hangs freely and remains still
 - At least one known weight (ideally near your typical maximum load)
 
-### Calibration Steps
+## Calibration Steps
 
 1. Connect to Crimpdeq with nRF Connect:
    1. Launch the app and go to the Scanner tab.
-   2. Find your device (for example, `Progressor_7125`) and tap "Connect".
+   2. Find your device (for example, `Progressor_7125`) and tap `Connect`.
    3. Once connected, the app will display the device’s services and characteristics.
       ![nRF Discovered](../assets/Screenshot_1.png)
 2. Locate the calibration characteristic:
@@ -21,9 +21,9 @@
       ![Services](../assets/Screenshot_2.png)
 3. Compute the hex value of your known weight:
    1. Open the [Floating Point to Hex Converter](https://gregstoll.com/~gregstoll/floattohex/).
-   2. Select "Single-precision" (32-bit) floating point.
-   3. Enter your known weight in the "Float value" field (in kilograms unless your device expects grams; see Important Notes).
-   4. Click "Convert to hex" and save the resulting "Hex value".
+   2. Select `Single-precision` (32-bit) floating point.
+   3. Enter your known weight in the `Float value` field (in kilograms unless your device expects grams; see Important Notes).
+   4. Click `Convert to hex` and save the resulting `Hex value`.
       **Example:** 75.3 kg → `0x4296999a`.
 4. Zero the device (tare):
    1. Hang Crimpdeq with no weight attached.

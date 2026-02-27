@@ -3,7 +3,7 @@
 ## Code Structure
 
 ### `hx711`
-This module implements the load cell functionality. It's an `async` version of the [loadcell](https://crates.io/crates/loadcell) crate with additional modifications.
+This module implements load cell support. It is an `async` version of the [loadcell](https://crates.io/crates/loadcell) crate with project-specific changes.
 
 ### `ble`
 This module implements the Bluetooth Low Energy (BLE) functionality:

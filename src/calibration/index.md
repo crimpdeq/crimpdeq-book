@@ -6,4 +6,4 @@ You can calibrate in two ways: with the **Crimpdeq app** or **nRF Connect**.
 
 The Crimpdeq app is recommended because it is simpler and gives visual feedback.
 
-> ⚠️ **Note**: The device comes with a default calibration, feel free to verify how good this adjust to your load cell, you can easily test it on Frez or Tindeq App. If its good enough, you can skip the calibration chapter.
+> ⚠️ **Note**: The device ships with a default calibration. Test it first in the Frez or Tindeq app. If accuracy is already good enough for your load cell, you can skip this chapter.
