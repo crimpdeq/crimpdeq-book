@@ -20,11 +20,13 @@ This chapter explains how to assemble your own Crimpdeq V1 using the custom PCB 
 
    | **PCB Pin** | **Load Cell Pin** | **Description**                    |
    | ----------- | ----------------- | ---------------------------------- |
-   | E+          | E+ (Red)          | Excitation positive (to load cell) |
-   | E-          | E- (Black)        | Excitation negative (to load cell) |
-   | S+          | S+ (Green)        | Signal positive (from load cell)   |
-   | S-          | S- (White)        | Signal negative (from load cell)   |
-<!-- TODO: Add a photo of the PCB with the pin names -->
+   | E+ (15)     | E+ (Red)          | Excitation positive (to load cell) |
+   | E- (14)     | E- (Black)        | Excitation negative (to load cell) |
+   | S+ (12)     | S+ (Green)        | Signal positive (from load cell)   |
+   | S- (13)     | S- (White)        | Signal negative (from load cell)   |
+
+   ![PCB Pinout](../../assets/pcb_pinout.jpg)
+   <!-- To get this image:PCB Editor>File>Plot>Select "F.Fab"> Select "Sketch pads on fabricaton layers" and "Inclode pad numbers">Plot -->
 2. Connect the battery and switch to the PCB:
    1. Solder the battery negative wire (black) to the `B-` pin on the PCB.
    2. Cut the battery positive wire (red) in half.
@@ -44,5 +46,5 @@ This chapter explains how to assemble your own Crimpdeq V1 using the custom PCB 
 
 ## 5. Next Steps
 
-1. Flash the firmware (see [Firmware](../../firmware.md)).
-2. Calibrate the device (see [Calibration](../../calibration.md)).
+1. Flash the firmware (see [Firmware](../../firmware/index.md)).
+2. Calibrate the device (see [Calibration](../../calibration/index.md)).
