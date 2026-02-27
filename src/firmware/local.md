@@ -1,5 +1,6 @@
 # Flash with Local Setup
 
+This chapter covers how to compile and flash the Crimpdeq firmware to your device.
 
 ## Prerequisites
 

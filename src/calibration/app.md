@@ -10,11 +10,11 @@
     - Windows: `crimpdeq-app-v<x.y.z>-windows.zip`
     - Linux: `crimpdeq-app-v<x.y.z>-linux.zip`
 - A stable mounting point so the device hangs freely and remains still
-- One known weight (ideally near your typical maximum load)
+- At least one known weight (ideally near your typical maximum load)
 
 ### Calibration Steps
 
-1. Connect to Crimpdeq
+1. Connect to your Crimpdeq
    1. Launch the Crimpdeq app and grant permission to access device location (required for Bluetooth).
    2. Tap **Scan** to pair with your device.
    3. Once connected, the app shows device info (firmware version, battery, and current calibration).
@@ -28,3 +28,5 @@
    1. After adding at least 2 points, the app displays the current calibration curve. Confirm it matches your expectations.
 
    ![Calibration Result](./assets/Screenshot_0.jpg)
+
+Adding more calibration points (up to 20) improves measurement accuracy across the full load range.

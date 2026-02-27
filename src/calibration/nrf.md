@@ -6,7 +6,7 @@
   - [iOS](https://apps.apple.com/es/app/nrf-connect-for-mobile/id1054362403)
   - [Desktop](https://www.nordicsemi.com/Products/Development-tools/nRF-Connect-for-Desktop/Download#infotabs) (Windows, Linux, macOS)
 - A stable mounting point so the device hangs freely and remains still
-- One known weight (ideally near your typical maximum load)
+- At least one known weight (ideally near your typical maximum load)
 
 ### Calibration Steps
 
@@ -14,11 +14,11 @@
    1. Launch the app and go to the Scanner tab.
    2. Find your device (for example, `Progressor_7125`) and tap "Connect".
    3. Once connected, the app will display the device’s services and characteristics.
-      ![nRF Discovered](./assets/Screenshot_1.png)
+      ![nRF Discovered](../assets/Screenshot_1.png)
 2. Locate the calibration characteristic:
    1. Expand **Unknown Service**.
    2. Find the characteristic with UUID: `7e4e1703-1ea6-40c9-9dcc-13d34ffead57`.
-      ![Services](./assets/Screenshot_2.png)
+      ![Services](../assets/Screenshot_2.png)
 3. Compute the hex value of your known weight:
    1. Open the [Floating Point to Hex Converter](https://gregstoll.com/~gregstoll/floattohex/).
    2. Select "Single-precision" (32-bit) floating point.
@@ -30,7 +30,7 @@
    2. Send the command `7300000000` to the characteristic:
       - Tap the Up Arrow icon on the characteristic (`7e4e1703-1ea6-40c9-9dcc-13d34ffead57`).
       - Enter the command as shown.
-        ![Send weight](./assets/Screenshot_3.png)
+        ![Send weight](../assets/Screenshot_3.png)
 5. Perform the calibration:
    - Commands and values are hex strings without spaces (letter case does not matter).
    1. Attach your known weight to Crimpdeq.
