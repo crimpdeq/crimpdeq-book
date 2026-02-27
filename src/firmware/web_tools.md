@@ -1,18 +1,25 @@
 # Flash with Web Tools
 
-## Upload the Firmware
-<!-- Remove this part from here, move the firmware chapter just after assembly as it common to both builds -->
-1. Connect the device with a USB-C cable.
-2. Download the `crimpdeq.bin`  from the [latest GitHub release](https://github.com/crimpdeq/crimpdeq-firmware/releases/latest)
-3. Upload the firmware: You can flash your device using one of these two tools:
-  - Using [esp.huhn.me](https://esp.huhn.me/).
-    1. Click "Connect" and select the serial port for your ESP board.
-    2. Upload your `.bin` file.
-    3. Click "Program".
-       - See [this blog post](https://blog.spacehuhn.com/espwebtool) for more details.
-  - Using [Adafruit ESPTool](https://adafruit.github.io/Adafruit_WebSerial_ESPTool/)
-    1. Click Connect and select the serial port for your ESP board (often named `USB/JTAG serial debug unit...`).
-    2. Upload your `.bin` file at offset `0x10000`.
-    3. Click Program.
+This chapter covers how to flash your device with a pre-built binary.
 
-   ![Flashing with ESPTool](assets/esptool.png)
+
+1. Connect the device with a USB-C cable.
+2. Download a `.bin` from the [latest GitHub release](https://github.com/crimpdeq/crimpdeq-firmware/releases/latest):
+   - If its the first time you are flashing Crimpdeq firmware to your device, download `crimdeq-merged.bin`
+   - If you are updating the Crimpdeq fimrware on your device, download: `crimpdeq.bin`
+3. Select you flashing web. Use either:
+   - [esp.huhn.me](https://esp.huhn.me/)
+     - See [this blog post](https://blog.spacehuhn.com/espwebtool) for extra details.
+   - [Adafruit ESPTool](https://adafruit.github.io/Adafruit_WebSerial_ESPTool/)
+4. Click `Connect` and select the serial port for your ESP board.
+   - On Adafruit ESPTool the port often appears as `USB/JTAG serial debug unit...`.
+5. Click `Erase` only if this is the first time flashing this device.
+
+   > ⚠️ **Note**: Erasing the device also erases stored calibration values. Skip this if the device was already programmed and calibrated.
+
+6. Upload your `.bin`:
+   - If you are using `crimpdeq-merged.bin` -> address `0x0`
+   - If you are using `crimpdeq.bin` -> address `0x10000`
+7. Click `Program`.
+
+![Flashing with ESPTool](../assets/esptool.png)
