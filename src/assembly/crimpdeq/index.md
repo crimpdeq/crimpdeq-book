@@ -24,7 +24,7 @@ This chapter explains how to assemble your own Crimpdeq V1 using the custom PCB 
    | S+ (12)     | S+ (Green)        | Signal positive (from load cell)   |
    | S- (13)     | S- (White)        | Signal negative (from load cell)   |
 
-   ![PCB Pinout](../../assets/pcb_pinout.jpg)
+   <p style="text-align:center;"><img src="../../assets/pcb_pinout.png" alt="PCB Pinout" width="55%"></p>
    <!-- To get this image:PCB Editor>File>Plot>Select "F.Fab"> Select "Sketch pads on fabricaton layers" and "Inclode pad numbers">Plot -->
 2. Connect the battery and switch to the PCB:
    1. Solder the battery negative wire (black) to the `B-` pin on the PCB.
