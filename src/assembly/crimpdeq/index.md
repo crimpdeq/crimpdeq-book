@@ -27,11 +27,16 @@ This chapter explains how to assemble your own Crimpdeq V1 using the custom PCB 
    <p style="text-align:center;"><img src="../../assets/pcb_pinout.png" alt="PCB Pinout" width="55%"></p>
    <!-- To get this image:PCB Editor>File>Plot>Select "F.Fab"> Select "Sketch pads on fabricaton layers" and "Inclode pad numbers">Plot -->
 2. Connect the battery and switch to the PCB:
-   1. Solder the battery negative wire (black) to the `B-` pin on the PCB.
-   2. Cut the battery positive wire (red) in half.
-   3. Solder one half of the positive wire to one terminal of the KCD11 switch.
-      - Route the wire through the switch opening in the case before soldering, because the switch will be installed there later.
-   4. Solder the other half of the positive wire from the second switch terminal to the `B+` pin on the PCB.
+   1. Solder the battery negative wire (black) to pin `16` on the PCB.
+   2. Cut the battery positive wire (red) into two sections.
+   3. Pass both positive wire sections through the switch opening in the case before soldering them to the KCD11 switch.
+      - This is important: if both wires are already soldered to the switch before they are passed through the opening, you will not be able to insert the switch into the case afterward.
+   4. Solder one positive wire section from the battery to one terminal of the KCD11 switch.
+   5. Solder the second positive wire section from the other switch terminal to pin `17` on the PCB.
+
+   This places the switch in series with the battery positive line, so the switch controls power to the PCB.
+
+   > ⚠️ **Note**: When wiring the switch, make sure its OFF position opens the circuit. This ensures the battery is disconnected from the PCB when the switch is turned off.
 
 ## 3. Place the Components
 1. Place the load cell in the 3D case.
