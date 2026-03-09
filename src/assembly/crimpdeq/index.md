@@ -1,21 +1,21 @@
 # Crimpdeq V1 Assembly
 
-This chapter explains how to assemble your own Crimpdeq V1 using the custom PCB and the custom 3D-printed case.
+This chapter shows how to assemble your own Crimpdeq V1 using the custom PCB and 3D-printed case.
 
 ![Crimpdeq V1](../../assets/crimpdeq_v1_1.png)
 
 ## 1. Required Materials
 - [Crimpdeq PCB v1.0.0](https://github.com/crimpdeq/crimpdeq-pcb/releases/tag/v1.0.0)
 - [Crimpdeq 3D case](https://github.com/crimpdeq/crimpdeq-case/releases/latest)
-- Load cell: you can salvage it from a [crane scale](https://www.aliexpress.com/item/1005002719645426.html) ([Amazon alternative](https://www.amazon.es/dp/B08133JCM6)) or buy the load cell directly.
-  - It should be a WH-C07 (or a compatible load cell with similar dimensions).
+- Load cell: you can salvage one from a [crane scale](https://www.aliexpress.com/item/1005002719645426.html) ([Amazon alternative](https://www.amazon.es/dp/B08133JCM6)) or buy the load cell directly.
+  - Use a WH-C07, or a compatible load cell with similar dimensions.
 - [2000mAh battery](https://www.aliexpress.us/item/3256809404408618.html?spm=a2g0o.order_list.order_list_main.5.1406194d6kJ2h0&gatewayAdapt=glo2usa4itemAdapt)
 - [KCD11 switch](https://www.aliexpress.us/item/2255800787248498.html?spm=a2g0o.order_list.order_list_main.11.1406194d6kJ2h0&gatewayAdapt=glo2usa4itemAdapt)
 - 4 x M2.5 screws
 
 ## 2. Soldering
 1. Connect the load cell to the PCB:
-   - Solder the four load cell wires to the PCB. Typical color mapping:
+   - Solder the four load cell wires to the PCB: 
 
    | **PCB Pin** | **Load Cell Pin** | **Description**                    |
    | ----------- | ----------------- | ---------------------------------- |
@@ -24,19 +24,20 @@ This chapter explains how to assemble your own Crimpdeq V1 using the custom PCB 
    | S+ (12)     | S+ (Green)        | Signal positive (from load cell)   |
    | S- (13)     | S- (White)        | Signal negative (from load cell)   |
 
+   > ⚠️ **Note**: This assumes the typical load cell wire colors (red = E+, black = E-, green = S+, white = S-). Verify your load cell matches this before soldering.
+
    <p style="text-align:center;"><img src="../../assets/pcb_pinout.png" alt="PCB Pinout" width="55%"></p>
-   <!-- To get this image:PCB Editor>File>Plot>Select "F.Fab"> Select "Sketch pads on fabricaton layers" and "Inclode pad numbers">Plot -->
+   <!-- To regenerate this image in KiCad: PCB Editor > File > Plot > select "F.Fab" > enable "Sketch pads on fabrication layers" and "Include pad numbers" > Plot. -->
+
 2. Connect the battery and switch to the PCB:
-   1. Solder the battery negative wire (black) to pin `16` on the PCB.
+   1. Solder the battery negative wire (black) to `B- (16)` on the PCB.
    2. Cut the battery positive wire (red) into two sections.
-   3. Pass both positive wire sections through the switch opening in the case before soldering them to the KCD11 switch.
-      - This is important: if both wires are already soldered to the switch before they are passed through the opening, you will not be able to insert the switch into the case afterward.
+   3. Before soldering the switch, pass both positive wire sections through the switch opening in the case.
+      - If you solder the wires to the switch first, you will not be able to insert the switch into the case afterward.
    4. Solder one positive wire section from the battery to one terminal of the KCD11 switch.
-   5. Solder the second positive wire section from the other switch terminal to pin `17` on the PCB.
+   5. Solder the other positive wire section from the second switch terminal to `B+ (17)` on the PCB.
 
-   This places the switch in series with the battery positive line, so the switch controls power to the PCB.
-
-   > ⚠️ **Note**: When wiring the switch, make sure its OFF position opens the circuit. This ensures the battery is disconnected from the PCB when the switch is turned off.
+   > ⚠️ **Note**: The switch must be wired in series with the battery positive line, and its OFF position must open the circuit. For safety, the battery should be disconnected from the PCB when the switch is off.
 
 ## 3. Place the Components
 1. Place the load cell in the 3D case.
@@ -49,6 +50,5 @@ This chapter explains how to assemble your own Crimpdeq V1 using the custom PCB 
 2. Fasten it with the 4 M2.5 screws.
 
 ## 5. Next Steps
-
 1. Flash the firmware (see [Firmware](../../firmware/index.md)).
 2. Calibrate the device (see [Calibration](../../calibration/index.md)).
