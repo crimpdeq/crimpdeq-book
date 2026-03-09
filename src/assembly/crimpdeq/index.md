@@ -28,6 +28,9 @@ This chapter shows how to assemble your own Crimpdeq V1 using the custom PCB and
 
    <p style="text-align:center;"><img src="../../assets/pcb_pinout.png" alt="PCB Pinout" width="55%"></p>
    <!-- To regenerate this image in KiCad: PCB Editor > File > Plot > select "F.Fab" > enable "Sketch pads on fabrication layers" and "Include pad numbers" > Plot. -->
+Reference photo of the load cell wires after soldering them to the PCB:
+
+   <p style="text-align:center;"><img src="../../assets/loadcell_pcb.jpg" alt="Load cell wires soldered to the PCB" width="65%"></p>
 
 2. Connect the battery and switch to the PCB:
    1. Solder the battery negative wire (black) to `B- (16)` on the PCB.
