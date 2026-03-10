@@ -24,15 +24,20 @@ This chapter shows how to assemble your own Crimpdeq V1 using the custom PCB and
    | S+ (12)     | S+ (Green)        | Signal positive (from load cell)   |
    | S- (13)     | S- (White)        | Signal negative (from load cell)   |
 
-   > ⚠️ **Note**: This assumes the typical load cell wire colors (red = E+, black = E-, green = S+, white = S-). Verify your load cell matches this before soldering.
+   > ⚠️ **Note**: This assumes the typical load cell wire colors (red = E+, black = E-, green = S+, white = S-). Verify your load cell wiring before soldering, because some compatible load cells use a different color order.
 
    <p style="text-align:center;"><img src="../../assets/pcb_pinout.png" alt="PCB Pinout" width="55%"></p>
    <!-- To regenerate this image in KiCad: PCB Editor > File > Plot > select "F.Fab" > enable "Sketch pads on fabrication layers" and "Include pad numbers" > Plot. -->
-Reference photo of the load cell wires after soldering them to the PCB:
+   Reference photo of the load cell wires after soldering them to the PCB:
 
    <p style="text-align:center;"><img src="../../assets/loadcell_pcb.jpg" alt="Load cell wires soldered to the PCB" width="65%"></p>
 
-2. Connect the battery and switch to the PCB:
+2. Install the load cell and battery in the case:
+   1. Place the load cell in its position in the 3D-printed case.
+   2. Route the load cell wires so they are not pinched by the PCB or the lid.
+   3. Place the battery in the battery compartment.
+
+3. Wire the battery and switch to the PCB:
    1. Solder the battery negative wire (black) to `B- (16)` on the PCB.
    2. Cut the battery positive wire (red) into two sections.
    3. Before soldering the switch, pass both positive wire sections through the switch opening in the case.
@@ -41,17 +46,19 @@ Reference photo of the load cell wires after soldering them to the PCB:
    5. Solder the other positive wire section from the second switch terminal to `B+ (17)` on the PCB.
 
    > ⚠️ **Note**: The switch must be wired in series with the battery positive line, and its OFF position must open the circuit. For safety, the battery should be disconnected from the PCB when the switch is off.
+   
+4. Place the PCB and switch:
+   1. Position the PCB in the case.
+   2. Tuck the wires neatly around it so nothing sits under the board.
+   3. Insert the KCD11 switch into the switch opening.
 
-## 3. Place the Components
-1. Place the load cell in the 3D case.
-2. Place the battery in the 3D case.
-3. Place the PCB in the case.
-4. Insert the switch into the switch opening.
+5. Verify all connections with a multimeter.
 
-## 4. Close the Case
+
+## 3. Close the Case
 1. Place the lid on the main enclosure.
 2. Fasten it with the 4 M2.5 screws.
 
-## 5. Next Steps
+## 4. Next Steps
 1. Flash the firmware (see [Firmware](../../firmware/index.md)).
 2. Calibrate the device (see [Calibration](../../calibration/index.md)).
