@@ -5,7 +5,7 @@ This chapter shows how to assemble your own Crimpdeq V1 using the custom PCB and
 ![Crimpdeq V1](../../assets/crimpdeq_v1_1.png)
 
 ## 1. Required Materials
-- [Crimpdeq PCB v1.0.0](https://github.com/crimpdeq/crimpdeq-pcb/releases/tag/v1.0.0)
+- [Crimpdeq PCB v1](https://github.com/crimpdeq/crimpdeq-pcb/releases/latest)
   - Dont know how to manufacture a PCB? See [PCB manufacturing guide](./pcb.md#how-to-manufacture)
 - [Crimpdeq 3D case](https://github.com/crimpdeq/crimpdeq-case/releases/latest)
 - Load cell: you can salvage one from a [crane scale](https://www.aliexpress.com/item/1005002719645426.html) ([Amazon alternative](https://www.amazon.es/dp/B08133JCM6)) or buy the load cell directly.

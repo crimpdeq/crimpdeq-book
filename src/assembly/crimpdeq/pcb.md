@@ -13,11 +13,10 @@ The PCB was sponsored by [PCBWay](https://www.pcbway.com/). Working with them wa
 
 Revision 1 has been tested and works as expected, but there is still room for improvement. See the [Revision 2 issue](https://github.com/crimpdeq/crimpdeq-hardware/issues/2).
 
-You can find the schematic, layout, and production files in the repository [GitHub Releases](https://github.com/crimpdeq/crimpdeq-pcb/releases).
+You can find the schematic, layout, and production files in the repository [latest GitHub release](https://github.com/crimpdeq/crimpdeq-pcb/releases/latest).
 
 ## How to Manufacture
-1. Download the production files from the [GitHub Releases](https://github.com/crimpdeq/crimpdeq-pcb/releases) page.
-   - It is recommended to use the [latest release](https://github.com/crimpdeq/crimpdeq-pcb/releases/latest).
+1. Download the production files from the [GitHub release](https://github.com/crimpdeq/crimpdeq-pcb/releases/latest).
    - The release includes the files typically needed by PCB manufacturers:
      - `gerber.zip`: PCB fabrication files
      - `bom.csv`: bill of materials for assembly
