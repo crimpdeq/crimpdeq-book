@@ -38,6 +38,8 @@ This chapter shows how to assemble your own Crimpdeq V1 using the custom PCB and
    2. Route the load cell wires so they are not pinched by the PCB or the lid.
    3. Place the battery in the battery compartment.
 
+   <p style="text-align:center;"><img src="../../assets/crimpdeq_assembly_1.png" alt="Load cell and battery placed on the case" width="75%"></p>
+
 3. Wire the battery and switch to the PCB:
    1. Solder the battery negative wire (black) to `B- (16)` on the PCB.
    2. Cut the battery positive wire (red) into two sections.
@@ -47,11 +49,15 @@ This chapter shows how to assemble your own Crimpdeq V1 using the custom PCB and
    5. Solder the other positive wire section from the second switch terminal to `B+ (17)` on the PCB.
 
    > ⚠️ **Note**: The switch must be wired in series with the battery positive line, and its OFF position must open the circuit. For safety, the battery should be disconnected from the PCB when the switch is off.
-   
+
+  <p style="text-align:center;"><img src="../../assets/crimpdeq_assembly_2.jpg" alt="Assembled case" width="65%"></p>
 4. Place the PCB and switch:
    1. Position the PCB in the case.
    2. Tuck the wires neatly around it so nothing sits under the board.
    3. Insert the KCD11 switch into the switch opening.
+
+  <p style="text-align:center;"><img src="../../assets/crimpdeq_assembly_3.jpg" alt="Assembled case" width="65%"></p>
+
 
 5. Verify all connections with a multimeter.
 
