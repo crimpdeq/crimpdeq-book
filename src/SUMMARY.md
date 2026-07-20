@@ -2,7 +2,7 @@
 
 - [Introduction](./introduction.md)
 - [Build Your Crimpdeq](./assembly/index.md)
-  - [Crimpdeq V1 Assembly](./assembly/crimpdeq/index.md)
+  - [Crimpdeq Assembly](./assembly/crimpdeq/index.md)
     - [PCB Design](./assembly/crimpdeq/pcb.md)
     - [3D-Printed Case](./assembly/crimpdeq/case.md)
   - [Prototype Assembly](./assembly/prototype.md)

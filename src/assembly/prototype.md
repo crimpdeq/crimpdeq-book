@@ -48,10 +48,10 @@ This chapter explains how to build your own Crimpdeq prototype.
    | ------------- | ----------------- | ---------------------------------- |
    | E+            | E+ (Red)          | Excitation positive (to load cell) |
    | E-            | E- (Black)        | Excitation negative (to load cell) |
-   | S+            | S+ (Green)        | Signal positive (from load cell)   |
+   | S+            | S+ (Green or blue) | Signal positive (from load cell)   |
    | S-            | S- (White)        | Signal negative (from load cell)   |
 
-   > ⚠️ **Note**: On some HX711 modules, `S+`/`S-` are labeled `A+`/`A-`.
+   > ⚠️ **Note**: On some HX711 modules, `S+`/`S-` are labeled `A+`/`A-`. Wire colors are not guaranteed, so confirm your load cell's wiring before soldering.
 3. Connect the HX711 to the ESP32-C3-DevKit-RUST-1:
 
 | **HX711 Pin** | **ESP32-C3 Pin** | **Description**                |
