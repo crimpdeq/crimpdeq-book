@@ -17,15 +17,15 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - uses: jontze/action-mdbook@v4
+      - uses: taiki-e/install-action@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          tool: mdbook
 
       - name: Build book
         run: mdbook build
 
       - name: Publish to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 2fc7f8105c4c2a621b320949cae125ae
