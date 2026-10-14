@@ -15,17 +15,24 @@
 ## Calibration Steps
 
 1. Connect to your Crimpdeq
-   1. Launch the Crimpdeq app and grant permission to access device location (required for Bluetooth).
-   2. Tap **Scan** to pair with your device.
-   3. Once connected, the app shows device info (firmware version, battery, and current calibration).
+   1. Launch the Crimpdeq app and tap **Scan**. Allow Bluetooth access when asked: **Nearby devices**
+      on Android 12 and newer, **Location** on older Android versions.
+   2. Tap **Connect** next to your device.
+   3. Once connected, the app shows the firmware version, the battery voltage and estimated charge,
+      and the current calibration.
 2. Add calibration points
    1. Open the **Calibration** tab.
    2. For each point:
      - Hang the corresponding load on the device (or leave it empty for zero).
      - Enter the weight value in the app and tap **Add Calibration Point**.
+     - Hold the weight still. The app adds the point once the load stays steady for one second, and
+       reports when it does not settle.
    - **Recommended:** Add at least 2 points—**zero** (nothing hanging) and **full scale** (the maximum weight you expect to measure). The device supports up to 20 calibration points for finer accuracy.
 3. Check the result
-   1. After adding at least 2 points, the app displays the current calibration curve. Confirm it matches your expectations.
+   1. After adding at least 2 points, the **Calibration Check** plots the points against the line the
+      device applies and lists the error of each point, with the maximum and RMS error. Large errors
+      point to a swinging load or a wrong weight value: reset the calibration and add the points
+      again.
 
    ![Calibration Result](../assets/Screenshot_0.jpg)
 
