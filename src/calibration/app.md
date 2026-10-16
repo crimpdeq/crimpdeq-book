@@ -26,7 +26,7 @@
    - **Recommended:** Add at least 2 points—**zero** (nothing hanging) and **full scale** (the maximum weight you expect to measure). The device supports up to 20 calibration points for finer accuracy.
 3. Check the result
    1. After adding at least 2 points, the app displays the current calibration curve. Confirm it matches your expectations.
-   2. If a point looks wrong, such as one with a large error, tap the delete icon on its row. The device refits the calibration to the remaining points, and keeps the point if they do not define a plausible calibration.
+   2. If a point looks wrong, such as one with a large error, tap the delete icon on its row. The device refits the calibration to the remaining points, and keeps the point if they do not define a plausible calibration. Deleting points requires firmware v3.0.0 or later; earlier firmware ignores the request and keeps the point.
 
    ![Calibration Result](../assets/Screenshot_0.jpg)
 
