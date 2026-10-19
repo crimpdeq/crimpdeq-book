@@ -4,6 +4,20 @@ The Crimpdeq firmware is written in async Rust (`no_std`) using [`esp-hal`](http
 
 This section explains how to flash the firmware to your device and, optionally, how the code is organized.
 
+## Choose the Firmware for Your PCB
+
+Each PCB revision needs its own firmware. Use the latest [firmware release](https://github.com/crimpdeq/crimpdeq-firmware/releases) for your PCB:
+
+| PCB revision | Firmware |
+| ------------ | -------- |
+| V1           | `v0.4.0` |
+| V2           | `v2.x`   |
+| V3           | `v3.x`   |
+
+> ⚠️ **Note**: Firmware `v3.x` has not been released yet, so there are no pre-built V3 binaries. Until it is released, build and flash V3 firmware from the `main` branch with the [local setup](./local.md).
+
+> ⚠️ **Note**: Firmware for a different revision does not work with your PCB. For example, V3 uses an ADS1220 ADC instead of the HX711 used by V1 and V2.
+
 ## Choose a Flashing Method
 
 There are two supported ways to flash the firmware:

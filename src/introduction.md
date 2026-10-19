@@ -6,7 +6,12 @@ Meet Crimpdeq, a portable digital force sensor for climbers, coaches, and therap
 
 ## Specs
 
-- Rechargeable battery with USB-C charging
+These specs describe the current PCB V3 with its matching case and firmware.
+
+- Rechargeable battery with USB-C charging, also while switched off
+- Battery level reporting with a MAX17048 fuel gauge
+- RGB status LED for connection and low-battery status
+- ADS1220 24-bit load-cell ADC
 - Communicates via Bluetooth Low Energy (BLE)
 - Open-source firmware written in Rust
 - Open-source PCB design
@@ -14,13 +19,13 @@ Meet Crimpdeq, a portable digital force sensor for climbers, coaches, and therap
 - Automatic sleep when inactive
 - Compatible with the Tindeq Progressor app ([Android](https://play.google.com/store/apps/details?id=com.progressor&hl=es_419) | [iOS](https://apps.apple.com/es/app/tindeq-progressor/id1380412428))
 - Compatible with the Frez app (formerly ClimbHarder) ([Android](https://play.google.com/store/apps/details?id=com.holdtight.climbharder&pcampaignid=web_share) | [iOS](https://apps.apple.com/us/app/climbharder-no-hang-training/id6730120024))
-- Sampling rate: 80 Hz
+- Sampling rate: 175 Hz by default, selectable from 20 to 1000 Hz with the Crimpdeq app and kept across reboots (80 Hz on PCB V1 and V2)
 - Full-scale design load: 1500 N (~150 kg)
 - Precision:
   - 0.05 kg between 0 and 99 kg
   - 0.1 kg between 100 and 150 kg
 - Operating temperature: 0 to 40 C
-- Dimensions: 80 x 90 x 35 mm
+- Dimensions: 97 x 77 x 31 mm
 - Uses the [Tindeq Progressor API](https://tindeq.com/progressor_api/)
 
 > ⚠️ **Warning**: Some values depend on the load cell used in this project. If you use a different load cell, those values may change.

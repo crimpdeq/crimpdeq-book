@@ -13,4 +13,4 @@
 - [Calibration](./calibration/index.md)
   - [Calibrate with Crimpdeq App](./calibration/app.md)
   - [Calibrate with nRF Connect](./calibration/nrf.md)
-- [Battery Charging](./battery.md)
+- [Battery and Status LED](./battery.md)
