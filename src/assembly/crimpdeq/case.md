@@ -4,7 +4,7 @@ The case design is maintained in the [`crimpdeq-case` repository](https://github
 
 It consists of two parts (main body and lid) and includes mounting points for the load cell, battery, PCB, and switch.
 
-Download the printable files from the [repository releases](https://github.com/crimpdeq/crimpdeq-case/releases) and choose a case with the same major version as your PCB revision; for example, use case `v3.x` with PCB V3. Print both parts before assembly.
+Download the printable files from the [repository releases](https://github.com/crimpdeq/crimpdeq-case/releases) and choose the case that matches your PCB revision: case `v0.4.0` for PCB V1, and the same major version as the PCB from V2 on (for example, case `v3.x` with PCB V3). Print both parts before assembly.
 
 ## Revision 3 (Current)
 

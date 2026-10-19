@@ -6,7 +6,7 @@ This section explains how to flash the firmware to your device and, optionally, 
 
 ## Choose the Firmware for Your PCB
 
-Each PCB revision needs firmware from the same major version. Use the latest [firmware release](https://github.com/crimpdeq/crimpdeq-firmware/releases) for your PCB:
+Each PCB revision needs its own firmware. Use the latest [firmware release](https://github.com/crimpdeq/crimpdeq-firmware/releases) for your PCB:
 
 | PCB revision | Firmware |
 | ------------ | -------- |

@@ -4,7 +4,7 @@ The PCB design is maintained in the [`crimpdeq-pcb` repository](https://github.c
 
 The design is derived from the [ESP32-C3-DevKit-RUST-1](https://github.com/esp-rs/esp-rust-board). It removes unused sensors from the original design and keeps the components needed by Crimpdeq.
 
-The PCB, [firmware](../../firmware/index.md), and [case](./case.md) are compatible only within the same major version. For example, PCB V3 requires firmware `v3.x` and case `v3.x`.
+Starting with V2, the PCB, [firmware](../../firmware/index.md), and [case](./case.md) are compatible only within the same major version. For example, PCB V3 requires firmware `v3.x` and case `v3.x`. PCB V1 uses firmware `v0.4.0` and case `v0.4.0`.
 
 ## Revision 3 (Current)
 
