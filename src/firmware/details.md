@@ -44,3 +44,22 @@ The `main.rs` file defines several asynchronous tasks that run concurrently:
   - Monitors inactivity; after a timeout, the device enters deep sleep.
 
 Communication between tasks occurs via [`Channel`](https://docs.embassy.dev/embassy-sync/git/default/channel/struct.Channel.html)s and a shared device state.
+
+## BLE Protocol
+
+The device implements the [Tindeq Progressor API](https://tindeq.com/progressor_api/) on the Progressor service (`7e4e1701-1ea6-40c9-9dcc-13d34ffead57`). Apps write commands to the control point characteristic (`7e4e1703-…`): one opcode byte followed by its payload. The device answers with notifications on the data point characteristic (`7e4e1702-…`), each made of a response code byte, a payload length byte, and the payload. During a measurement, each `0x01` notification carries as many samples as fit in the connection's packet size, each a weight in kg (`f32`) followed by the microseconds since the measurement started (`u32`). Multi-byte values are little-endian.
+
+It supports these standard commands: tare (`0x64`), start measurement (`0x65`), stop measurement (`0x66`), add calibration point (`0x69`, followed by the weight in kg as an `f32`), get app version (`0x6B`), shutdown (`0x6E`, which closes the connection), sample battery (`0x6F`), and get Progressor ID (`0x70`).
+
+Crimpdeq adds these commands, which the Tindeq and Frez apps do not use:
+
+| Opcode | Command                 | Payload               | Response                                                                                                 |
+| ------ | ----------------------- | --------------------- | -------------------------------------------------------------------------------------------------------- |
+| `0x72` | Get calibration         | none                  | `0x05` with the calibration factor (`f32`), then one `0x06` per point with its raw value and weight in kg (`f32`, `f32`) |
+| `0x74` | Default calibration     | none                  | `0x05` with the default calibration factor; clears the calibration points                                 |
+| `0x75` | Set sample rate         | samples per second (`u16`) | `0x07` with the rate in use (`u16`), which stays unchanged for unsupported rates                       |
+| `0x76` | Get sample rate         | none                  | `0x07` with the rate in use (`u16`)                                                                      |
+| `0x77` | Get battery status      | none                  | `0x08` with the state of charge in percent (`u8`) and a charging flag (`u8`)                             |
+| `0x78` | Remove calibration point | point index (`u8`)   | If removed, the new calibration factor and points, then `0x09` with `1`; otherwise only `0x09` with `0`    |
+
+The supported sample rates are 20, 45, 90, 175, 330, 600, and 1000 SPS. The sample rate commands and `0x77` and `0x78` need firmware `v3.x`.

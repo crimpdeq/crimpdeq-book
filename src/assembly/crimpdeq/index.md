@@ -15,8 +15,8 @@ Most assembly steps are the same for PCB V1, V2, and V3. The main differences ar
 - [Crimpdeq 3D-printed case](./case.md) that matches your PCB revision
 - WH-C07 load cell, or a compatible load cell with similar dimensions
   - You can salvage one from a [crane scale](https://www.aliexpress.com/item/1005002719645426.html) ([Amazon alternative](https://www.amazon.es/dp/B08133JCM6)) or buy it separately.
-- [3.7 V, 2000 mAh LiPo battery](https://www.aliexpress.us/item/3256809404408618.html?spm=a2g0o.order_list.order_list_main.5.1406194d6kJ2h0&gatewayAdapt=glo2usa4itemAdapt)
-- [KCD11 two-terminal switch](https://www.aliexpress.us/item/2255800787248498.html?spm=a2g0o.order_list.order_list_main.11.1406194d6kJ2h0&gatewayAdapt=glo2usa4itemAdapt)
+- [3.7 V, 2000 mAh LiPo battery](https://www.aliexpress.us/item/3256809404408618.html)
+- [KCD11 two-terminal switch](https://www.aliexpress.us/item/2255800787248498.html)
 - Insulated hookup wire and heat-shrink tubing
 - 4 × M2.5 screws (M2.5×10 for the V3 case)
 

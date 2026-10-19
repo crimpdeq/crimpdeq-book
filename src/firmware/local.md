@@ -6,10 +6,7 @@ This chapter covers how to compile and flash the Crimpdeq firmware to your devic
 
 To build and upload the firmware, install:
 - [Rust](https://rustup.rs/)
-- The `stable` toolchain with the ESP32-C3 target:
-  ```bash
-  rustup toolchain install stable --component rust-src --target riscv32imc-unknown-none-elf
-  ```
+  - The repository's `rust-toolchain.toml` installs the `stable` toolchain, `rust-src`, and the ESP32-C3 target on the first build.
 - [`probe-rs`](https://probe.rs/), see [installation instructions](https://probe.rs/docs/getting-started/installation/)
   > ⚠️ **Note**: Depending on your OS, you may need extra setup steps:
   > - Linux: set up udev rules for your debug probe or USB-serial device (see the [`probe-rs` udev guide](https://probe.rs/docs/getting-started/installation/#udev-rules)).
@@ -46,9 +43,9 @@ With a [custom runner](https://doc.rust-lang.org/cargo/reference/config.html#tar
 ```bash
 cargo run --release
 ```
-This opens a serial monitor, allowing you to view log messages in real time.
+This opens a serial monitor. Logging is off by default (`DEFMT_LOG = "off"` in `.cargo/config.toml`).
 
-To modify the [log level](https://defmt.ferrous-systems.com/filtering), update the `DEFMT_LOG` value in `.cargo/config.toml` or set it when running the command:
+To see log messages, set the [log level](https://defmt.ferrous-systems.com/filtering) in `.cargo/config.toml` or when running the command:
 ```bash
 DEFMT_LOG=debug cargo run --release
 ```
