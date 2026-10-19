@@ -22,28 +22,28 @@
 3. Compute the hex value of your known weight:
    1. Open the [Floating Point to Hex Converter](https://gregstoll.com/~gregstoll/floattohex/).
    2. Select `Single-precision` (32-bit) floating point.
-   3. Enter your known weight in the `Float value` field (in kilograms unless your device expects grams; see Important Notes).
+   3. Enter your known weight in kilograms in the `Float value` field.
    4. Click `Convert to hex` and save the resulting `Hex value`.
-      **Example:** 75.3 kg → `0x4296999a`.
-4. Zero the device (tare):
+   5. Reverse the order of its four bytes, because the device reads the value in little-endian order.
+      **Example:** 75.3 kg → `0x4296999a` → `9a999642`.
+4. Add the zero point:
    1. Hang Crimpdeq with no weight attached.
-   2. Send the command `7300000000` to the characteristic:
+   2. Send the command `6900000000` (add a 0 kg calibration point) to the characteristic:
       - Tap the Up Arrow icon on the characteristic (`7e4e1703-1ea6-40c9-9dcc-13d34ffead57`).
-      - Enter the command as shown.
+      - Enter the command as a byte array.
         ![Send weight](../assets/Screenshot_3.png)
-5. Perform the calibration:
+5. Add the known-weight point:
    - Commands and values are hex strings without spaces (letter case does not matter).
-   1. Attach your known weight to Crimpdeq.
-   2. Build the calibration command by prefixing `73` to your hex value.
-      - **Example:** For 75.3 kg (`0x4296999a`), send: `734296999a`.
+   1. Attach your known weight to Crimpdeq and wait until it hangs still.
+   2. Build the calibration command by prefixing `69` to the reversed hex value.
+      - **Example:** For 75.3 kg (`9a999642`), send: `699a999642`.
    3. Send this command to the same characteristic (`7e4e1703-1ea6-40c9-9dcc-13d34ffead57`).
-   - You can add up to 20 calibration points. Repeat this step if you need higher accuracy.
+   - The device needs at least two points and accepts up to 20. Repeat this step with other known weights for higher accuracy.
 6. Verify:
-   1. Remove the weight and reattach it.
-   2. The reported value should be within a small tolerance of the known weight. If not, repeat steps 4-5.
+   1. Remove the weight, send `64` to tare, and reattach the weight.
+   2. The reported value should be within a small tolerance of the known weight. If not, send `74` to restore the default calibration and repeat steps 4-5.
 
 > ⚠️ **Note**:
-> - Units: Some devices expect the calibration value in grams instead of kilograms. If, after calibration, the measured value looks off by a factor of ~100 (e.g., 75.3 kg shows ~0.75), convert your known weight to grams and repeat step 5.
 > - Use a weight close to the maximum load you expect to measure (while staying within device limits) for best accuracy.
 > - Ensure the device is stable and stationary when sending commands.
 > - Perform calibration in a controlled environment (avoid wind, vibration, and temperature swings).

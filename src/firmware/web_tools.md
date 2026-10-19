@@ -6,8 +6,6 @@ This chapter covers how to flash your device with a pre-built binary.
 2. Download a `.bin` from the [GitHub release that matches your PCB revision](./index.md#choose-the-firmware-for-your-pcb):
    - If this is the first time you are flashing Crimpdeq firmware to your device, download `crimpdeq-merged.bin`.
    - If you are updating firmware on a device that is already flashed, download `crimpdeq.bin`.
-
-   > ⚠️ **Note**: There is no V3 firmware release yet. For PCB V3, use the [local setup](./local.md) instead.
 3. Choose a web flasher. Use either:
    - [esp.huhn.me](https://esp.huhn.me/)
      - See [this blog post](https://blog.spacehuhn.com/espwebtool) for extra details.
