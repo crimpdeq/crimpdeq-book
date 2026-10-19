@@ -4,7 +4,7 @@ This chapter shows how to assemble a Crimpdeq using the custom PCB and 3D-printe
 
 Most assembly steps are the same for PCB V1, V2, and V3. The main differences are the external wiring pad layout, especially the battery/switch wiring, and how the PCB sits in the case.
 
-<p style="text-align:center;"><img src="../../assets/crimpdeq_v3_lid.jpg" alt="Assembled Crimpdeq V3" width="50%"></p>
+<p style="text-align:center;"><img src="../../assets/Crimpdeqs_v3.jpg" alt="Assembled Crimpdeq V3" width="90%"></p>
 
 ## 1. Gather Parts and Tools
 
