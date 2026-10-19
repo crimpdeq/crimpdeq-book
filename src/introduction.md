@@ -30,12 +30,6 @@ These specs describe the current PCB V3 with its matching case and firmware.
 
 > ⚠️ **Warning**: Some values depend on the load cell used in this project. If you use a different load cell, those values may change.
 
-## Related Projects
-
-- [Crimpdeq app](https://app.crimpdeq.com): calibrate the device, choose its sample rate, and check live measurements
-- [Crimpdeq Platform](https://platform.crimpdeq.com): a 3D-printed platform that turns Crimpdeq into an isometric finger dynamometer
-- [Crimpdeq Grips](https://grips.crimpdeq.com): 3D-printed grips for isolated finger training
-
 ## Book Contents
 
 This book is a practical guide to understanding Crimpdeq and building your own. It covers assembly, calibration, firmware internals, and the PCB and 3D-printable case design.

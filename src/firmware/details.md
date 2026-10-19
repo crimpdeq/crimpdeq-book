@@ -47,7 +47,7 @@ Communication between tasks occurs via [`Channel`](https://docs.embassy.dev/emba
 
 ## BLE Protocol
 
-The device implements the [Tindeq Progressor API](https://tindeq.com/progressor_api/) on the Progressor service (`7e4e1701-1ea6-40c9-9dcc-13d34ffead57`). Apps write commands to the control point characteristic (`7e4e1703-…`): one opcode byte followed by its payload. The device answers with notifications on the data point characteristic (`7e4e1702-…`), each made of a response code byte, a payload length byte, and the payload. Multi-byte values are little-endian.
+The device implements the [Tindeq Progressor API](https://tindeq.com/progressor_api/) on the Progressor service (`7e4e1701-1ea6-40c9-9dcc-13d34ffead57`). Apps write commands to the control point characteristic (`7e4e1703-…`): one opcode byte followed by its payload. The device answers with notifications on the data point characteristic (`7e4e1702-…`), each made of a response code byte, a payload length byte, and the payload. During a measurement, each `0x01` notification carries as many samples as fit in the connection's packet size, each a weight in kg (`f32`) followed by the microseconds since the measurement started (`u32`). Multi-byte values are little-endian.
 
 It supports these standard commands: tare (`0x64`), start measurement (`0x65`), stop measurement (`0x66`), add calibration point (`0x69`, followed by the weight in kg as an `f32`), get app version (`0x6B`), shutdown (`0x6E`, which closes the connection), sample battery (`0x6F`), and get Progressor ID (`0x70`).
 
