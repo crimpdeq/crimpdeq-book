@@ -4,6 +4,8 @@ This chapter presents the Crimpdeq models you can build.
 
 Choose the one that matches your tools, budget, and how much assembly work you want to do.
 
+> ⚠️ **Note**: If you want a Crimpdeq, but dont have the materials/skill to build your own, feel free to email me at sergio.gasquez@gmail.com and we can discuss other options.
+
 ## Crimpdeq PCB Build
 
 <p style="text-align:center;"><img src="../assets/crimpdeq_v3_bottom.jpg" alt="Crimpdeq V3" width="50%"></p>

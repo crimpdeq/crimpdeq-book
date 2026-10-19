@@ -1,4 +1,4 @@
-[![CI](https://github.com/crimpdeq/book/actions/workflows/ci.yml/badge.svg)](https://github.com/crimpdeq/book/actions/workflows/ci.yml)
+[![Deploy Book](https://github.com/crimpdeq/crimpdeq-book/actions/workflows/ci.yml/badge.svg)](https://github.com/crimpdeq/crimpdeq-book/actions/workflows/ci.yml)
 [![Documentation](https://img.shields.io/badge/Documentation-Book-orange.svg)](https://book.crimpdeq.com)
 
 # Crimpdeq Book
@@ -15,20 +15,21 @@ cargo install mdbook
 
 With `mdbook` installed, you can clone the repository and start a development server by running:
 ```
-git clone https://github.com/crimpdeq/book
-cd book/
+git clone https://github.com/crimpdeq/crimpdeq-book
+cd crimpdeq-book/
 mdbook serve
 ```
+
+Pushes to `main` build the book and deploy it to [book.crimpdeq.com](https://book.crimpdeq.com).
 
 ## Content
 
 - Introduction: What is Crimpdeq?
-- Making your own Crimpdeq
-- How to calibrate your Crimpdeq
-- Charging the Battery
-- Firmware Details
-- PCB Details
+- Build Your Crimpdeq: PCB, 3D-printed case, and prototype assembly
+- Firmware & Flashing: web tools, local setup, and firmware internals
+- Calibration: with the Crimpdeq app or nRF Connect
+- Battery and Status LED
 
 ## Contributing
 - Fixes and improvements are welcome. Please open an issue or submit a pull request.
-- For small text changes, you can edit pages directly via the “Edit this page” link (when available) or by editing files under `src/` and running `mdbook serve` to preview.
+- For small text changes, use the "Edit this page" link on any page, or edit the files under `src/` and run `mdbook serve` to preview.
