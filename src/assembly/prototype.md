@@ -81,3 +81,8 @@ This chapter explains how to build your own Crimpdeq prototype.
 3. Close the case after confirming all components are secure.
 
 ![Assembly](../assets/crane_assembly.png)
+
+## 5. Next Steps
+
+1. Flash firmware [`v0.4.0`](https://github.com/crimpdeq/crimpdeq-firmware/releases/tag/v0.4.0), which uses the HX711 on `GPIO4`/`GPIO5` and the battery divider on `GPIO1` (see [Firmware](../firmware/index.md)).
+2. Calibrate the device (see [Calibration](../calibration/index.md)).

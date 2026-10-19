@@ -13,6 +13,7 @@ Each PCB revision needs its own firmware. Use the latest [firmware release](http
 | V1           | `v0.4.0` |
 | V2           | `v2.x`   |
 | V3           | `v3.x`   |
+| [Prototype](../assembly/prototype.md) | `v0.4.0` |
 
 > ⚠️ **Note**: Firmware for a different revision does not work with your PCB. For example, V3 uses an ADS1220 ADC instead of the HX711 used by V1 and V2.
 

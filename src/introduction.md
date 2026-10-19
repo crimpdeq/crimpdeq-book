@@ -17,8 +17,8 @@ These specs describe the current PCB V3 with its matching case and firmware.
 - Open-source PCB design
 - Open-source 3D-printable case design
 - Automatic sleep when inactive
-- Compatible with the Tindeq Progressor app ([Android](https://play.google.com/store/apps/details?id=com.progressor&hl=es_419) | [iOS](https://apps.apple.com/es/app/tindeq-progressor/id1380412428))
-- Compatible with the Frez app (formerly ClimbHarder) ([Android](https://play.google.com/store/apps/details?id=com.holdtight.climbharder&pcampaignid=web_share) | [iOS](https://apps.apple.com/us/app/climbharder-no-hang-training/id6730120024))
+- Compatible with the Tindeq Progressor app ([Android](https://play.google.com/store/apps/details?id=com.progressor) | [iOS](https://apps.apple.com/app/tindeq-progressor/id1380412428))
+- Compatible with the Frez app (formerly ClimbHarder) ([Android](https://play.google.com/store/apps/details?id=com.holdtight.climbharder) | [iOS](https://apps.apple.com/app/climbharder-no-hang-training/id6730120024))
 - Sampling rate: 175 Hz by default, selectable from 20 to 1000 Hz with the Crimpdeq app and kept across reboots (80 Hz on PCB V1 and V2)
 - Full-scale design load: 1500 N (~150 kg)
 - Precision:
@@ -29,6 +29,12 @@ These specs describe the current PCB V3 with its matching case and firmware.
 - Uses the [Tindeq Progressor API](https://tindeq.com/progressor_api/)
 
 > ⚠️ **Warning**: Some values depend on the load cell used in this project. If you use a different load cell, those values may change.
+
+## Related Projects
+
+- [Crimpdeq app](https://app.crimpdeq.com): calibrate the device, choose its sample rate, and check live measurements
+- [Crimpdeq Platform](https://platform.crimpdeq.com): a 3D-printed platform that turns Crimpdeq into an isometric finger dynamometer
+- [Crimpdeq Grips](https://grips.crimpdeq.com): 3D-printed grips for isolated finger training
 
 ## Book Contents
 

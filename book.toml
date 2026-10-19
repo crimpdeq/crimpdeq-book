@@ -8,7 +8,7 @@ language     = "en"
 edition = "2024"
 
 [output.html]
-git-repository-url = "https://github.com/crimpdeq/book"
+git-repository-url = "https://github.com/crimpdeq/crimpdeq-book"
 preferred-dark-theme = "ayu"
-edit-url-template = "https://github.com/crimpdeq/book/edit/main/{path}"
+edit-url-template = "https://github.com/crimpdeq/crimpdeq-book/edit/main/{path}"
 

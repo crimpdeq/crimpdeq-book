@@ -35,6 +35,8 @@ Revision 1 is a two-layer board that has been tested and works as expected. Its 
 
 ![PCB Revision 1](../../assets/pcb_v1.png)
 
+## Production Files
+
 The PCB was sponsored by [PCBWay](https://www.pcbway.com/). Working with them was fast and easy, and the resulting boards are high quality.
 
 [![PCBWay](../../assets/PCBWay.png)](https://www.pcbway.com/)
@@ -62,7 +64,7 @@ There are two ways to order this PCB:
 6. Click **Save to Cart** to continue with checkout.
 
 ### Placing Your Own Order on PCBWay
-1. Download the production files for your revision from the [GitHub releases](https://github.com/crimpdeq/crimpdeq-pcb/releases) (see the note above for V3).
+1. Download the production files for your revision from the [GitHub releases](https://github.com/crimpdeq/crimpdeq-pcb/releases).
 2. Use the included files when creating your PCBWay order:
    - `gerber.zip`: PCB fabrication files
    - `bom.csv`: bill of materials for assembly

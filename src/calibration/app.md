@@ -17,7 +17,7 @@
 1. Connect to your Crimpdeq
    1. Launch the Crimpdeq app and grant the Bluetooth permission (Nearby devices on Android 12 and newer, location on Android 11 and older).
    2. Tap **Scan** to pair with your device.
-   3. Once connected, the app shows device info (firmware version, battery, and current calibration).
+   3. Once connected, tap the device status in the app bar to see the battery, voltage, and sample rate. The **Firmware** field shows the Progressor version that the device reports to apps (`2.0.4`), not the Crimpdeq firmware release.
 2. Add calibration points
    1. Open the **Calibration** tab.
    2. For each point:
@@ -26,7 +26,12 @@
    - **Recommended:** Add at least 2 points—**zero** (nothing hanging) and **full scale** (the maximum weight you expect to measure). The device supports up to 20 calibration points for finer accuracy.
 3. Check the result
    1. After adding at least 2 points, the app displays the current calibration curve. Confirm it matches your expectations.
+   2. To discard a bad point, tap its delete icon. The device removes the point and refits the calibration to the remaining points (firmware `v3.x`).
 
    ![Calibration Result](../assets/Screenshot_0.jpg)
 
 Adding more calibration points (up to 20) improves measurement accuracy across the full load range.
+
+## Sample Rate
+
+With firmware `v3.x`, the **Measurements** tab lets you choose the sample rate (20 to 1000 SPS) while no measurement is running. The device keeps the rate across reboots, and the Tindeq and Frez apps receive data at that rate.

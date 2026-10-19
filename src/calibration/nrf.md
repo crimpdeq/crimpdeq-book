@@ -2,8 +2,8 @@
 
 ## Prerequisites
 - nRF Connect installed on your platform:
-  - [Android](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp&hl=es_419)
-  - [iOS](https://apps.apple.com/es/app/nrf-connect-for-mobile/id1054362403)
+  - [Android](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp)
+  - [iOS](https://apps.apple.com/app/nrf-connect-for-mobile/id1054362403)
   - [Desktop](https://www.nordicsemi.com/Products/Development-tools/nRF-Connect-for-Desktop/Download#infotabs) (Windows, Linux, macOS)
 - A stable mounting point so the device hangs freely and remains still
 - At least one known weight (ideally near your typical maximum load)
