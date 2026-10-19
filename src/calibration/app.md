@@ -2,7 +2,7 @@
 
 ## Prerequisites
 - Crimpdeq app on your platform:
-  - Web version (no installation): [Crimpdeq web app](https://crimpdeq.github.io/crimpdeq-app/)
+  - Web version (no installation): [app.crimpdeq.com](https://app.crimpdeq.com)
     - Not all browsers support WebBluetooth. Check [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API#browser_compatibility).
   - Native builds from the latest release: [crimpdeq-app/releases/latest](https://github.com/crimpdeq/crimpdeq-app/releases/latest)
     - Android: `crimpdeq-app-v<x.y.z>.apk`
@@ -15,7 +15,7 @@
 ## Calibration Steps
 
 1. Connect to your Crimpdeq
-   1. Launch the Crimpdeq app and grant permission to access device location (required for Bluetooth).
+   1. Launch the Crimpdeq app and grant the Bluetooth permission (Nearby devices on Android 12 and newer, location on Android 11 and older).
    2. Tap **Scan** to pair with your device.
    3. Once connected, the app shows device info (firmware version, battery, and current calibration).
 2. Add calibration points
