@@ -29,6 +29,6 @@ The RGB LED shows the device status:
 | Blinking red     | Battery low (3.5 V or less); charge it soon |
 | Off              | Asleep or switched off                 |
 
-When the battery drops to 3.3 V while not charging, the device turns itself off to protect the battery. It also sleeps after a period of inactivity. To wake it, disconnect USB and turn the switch off and on again.
+With firmware `v2.1.0` or newer, when the battery drops to 3.3 V while not charging, the device turns itself off to protect the battery. The device also sleeps after a period of inactivity. To wake it, disconnect USB and turn the switch off and on again.
 
 > ⚠️ **Note**: On V3, USB power keeps the device running while the cable is connected, even with the switch off.
