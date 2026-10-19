@@ -17,6 +17,12 @@ To build and upload the firmware, install:
 
 ## How to Build the Firmware
 
+The `main` branch of the [firmware repository](https://github.com/crimpdeq/crimpdeq-firmware) targets PCB V3. For an older PCB, check out the [release tag for your revision](./index.md#choose-the-firmware-for-your-pcb) first, for example:
+
+```bash
+git checkout v2.1.0
+```
+
 To build the firmware, run:
 
 ```bash
