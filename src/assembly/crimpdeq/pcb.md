@@ -41,6 +41,8 @@ The PCB was sponsored by [PCBWay](https://www.pcbway.com/). Working with them wa
 
 You can find the schematic, layout, and production files for the current revision in the [latest GitHub release](https://github.com/crimpdeq/crimpdeq-pcb/releases/latest). Older revisions are available from the [release archive](https://github.com/crimpdeq/crimpdeq-pcb/releases).
 
+> ⚠️ **Note**: The V3 production files (`gerber.zip`, `bom.csv`, `position.csv`, and the schematic and layout PDFs) have not been published yet; the [`v3.0.0` release](https://github.com/crimpdeq/crimpdeq-pcb/releases/tag/v3.0.0) currently has none. Until they are, you cannot order a V3 board from the release files. The [V2 release](https://github.com/crimpdeq/crimpdeq-pcb/releases/tag/v2.0.0) includes all of them.
+
 ## How to Manufacture
 There are two ways to order this PCB:
 
@@ -62,7 +64,7 @@ There are two ways to order this PCB:
 6. Click **Save to Cart** to continue with checkout.
 
 ### Placing Your Own Order on PCBWay
-1. Download the production files from the [latest GitHub release](https://github.com/crimpdeq/crimpdeq-pcb/releases/latest).
+1. Download the production files for your revision from the [GitHub releases](https://github.com/crimpdeq/crimpdeq-pcb/releases) (see the note above for V3).
 2. Use the included files when creating your PCBWay order:
    - `gerber.zip`: PCB fabrication files
    - `bom.csv`: bill of materials for assembly
