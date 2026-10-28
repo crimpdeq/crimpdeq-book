@@ -44,10 +44,12 @@ The PCB was sponsored by [PCBWay](https://www.pcbway.com/). Working with them wa
 You can find the schematic, layout, and production files for the current revision in the [latest GitHub release](https://github.com/crimpdeq/crimpdeq-pcb/releases/latest). Older revisions are available from the [release archive](https://github.com/crimpdeq/crimpdeq-pcb/releases).
 
 ## How to Manufacture
-There are two ways to order this PCB:
+These steps are for Revision 3 ([`v3.0.0`](https://github.com/crimpdeq/crimpdeq-pcb/releases/tag/v3.0.0)). There are two ways to order this PCB:
 
-1. **Using the PCBWay Project page** — recommended, since it already includes the latest uploaded production files.
+1. **Using the PCBWay Project page**: recommended, since it already includes the latest uploaded production files.
 2. **Placing your own PCBWay order** using the production files from the repository releases.
+
+Both ways only load the production files; you still need to apply the [order settings](#order-settings).
 
 ### Using PCBWay Projects
 1. Open the PCBWay Project page using the button below.
@@ -56,64 +58,67 @@ There are two ways to order this PCB:
 
 2. Confirm that the revision shown on the project page is the one you want to build.
 3. On the right panel, select **PCB+Assembly** and click **Add to Cart**.
-4. Enter the desired quantity and click **Calculate**.
+4. Apply the [order settings](#order-settings).
+5. Enter the desired quantity and click **Calculate**.
 
    > ⚠️ **Note**: PCBWay shows two quantity fields. One is the number of PCBs to manufacture, and the other is the number of boards to assemble with components. The minimum PCB quantity is usually 5.
 
-5. Choose your shipping country and shipping method.
-6. Click **Save to Cart** to continue with checkout.
+6. Choose your shipping country and shipping method.
+7. Click **Save to Cart** to continue with checkout.
 
 ### Placing Your Own Order on PCBWay
-These steps are for Revision 3 ([`v3.0.0`](https://github.com/crimpdeq/crimpdeq-pcb/releases/tag/v3.0.0)).
-
 1. Download these files from the release:
    - `crimpdeq.zip`: Gerber and drill files, named for PCBWay
    - `bom.csv`: bill of materials for assembly
    - `position.csv`: component placement file for assembly
-2. Open the [PCBWay PCB quote page](https://www.pcbway.com/orderonline.aspx), upload `crimpdeq.zip`, and set the PCB options:
-
-   | Option | Value |
-   | --- | --- |
-   | Board type | Single pieces |
-   | Size | 30 × 30 mm |
-   | Layers | 4 Layers |
-   | Material | FR-4, S1000H TG150 |
-   | Thickness | 1.6 mm |
-   | Min track/spacing | 4/4 mil |
-   | Min hole size | 0.3 mm |
-   | Solder mask | Green |
-   | Silkscreen | White |
-   | Surface finish | HASL lead free |
-   | Via process | Tenting vias |
-   | Finished copper | 1 oz Cu |
-   | Inner copper | 1 oz |
-
-   If PCBWay asks for the layer order from top to bottom, enter:
-
-   | Layer | Gerber file |
-   | --- | --- |
-   | L1 | `crimpdeq-F_Cu.gtl` |
-   | L2 | `crimpdeq-In1_Cu.g1` |
-   | L3 | `crimpdeq-In2_Cu.g2` |
-   | L4 | `crimpdeq-B_Cu.gbl` |
-
-3. Enable **Assembly Service**, upload `bom.csv` as the parts list and `position.csv` as the centroid file, and set the assembly options:
-
-   | Option | Value |
-   | --- | --- |
-   | Flexible options | Turnkey |
-   | Board type | Single pieces |
-   | Assembly side(s) | **Both sides** |
-   | Quantity | Number of boards to assemble |
-   | Contains sensitive components/parts | No |
-   | Accept alternatives/substitutes made in China | No |
-   | Function test | No |
-   | Firmware loading | No |
-
-   > ⚠️ **Note**: Revision 3 has components on both sides: the ESP32-C3 module and LEDs are on the back. PCBWay selects **Top side** by default; with it, the back-side components are not assembled.
-
-4. Submit the order and wait for the manufacturer review.
+2. Open the [PCBWay PCB quote page](https://www.pcbway.com/orderonline.aspx) and upload `crimpdeq.zip`.
+3. Enable **Assembly Service** and upload `bom.csv` as the parts list and `position.csv` as the centroid file.
+4. Apply the [order settings](#order-settings).
+5. Submit the order and wait for the manufacturer review.
 
    - The manufacturer may contact you with questions about substitutions, assembly notes, or file interpretation.
+
+### Order Settings
+PCB options:
+
+| Option | Value |
+| --- | --- |
+| Board type | Single pieces |
+| Size | 30 × 30 mm |
+| Layers | 4 Layers |
+| Material | FR-4, S1000H TG150 |
+| Thickness | 1.6 mm |
+| Min track/spacing | 4/4 mil |
+| Min hole size | 0.3 mm |
+| Solder mask | Green |
+| Silkscreen | White |
+| Surface finish | HASL lead free |
+| Via process | Tenting vias |
+| Finished copper | 1 oz Cu |
+| Inner copper | 1 oz |
+
+If PCBWay asks for the layer order from top to bottom, enter:
+
+| Layer | Gerber file |
+| --- | --- |
+| L1 | `crimpdeq-F_Cu.gtl` |
+| L2 | `crimpdeq-In1_Cu.g1` |
+| L3 | `crimpdeq-In2_Cu.g2` |
+| L4 | `crimpdeq-B_Cu.gbl` |
+
+Assembly options:
+
+| Option | Value |
+| --- | --- |
+| Flexible options | Turnkey |
+| Board type | Single pieces |
+| Assembly side(s) | **Both sides** |
+| Quantity | Number of boards to assemble |
+| Contains sensitive components/parts | No |
+| Accept alternatives/substitutes made in China | No |
+| Function test | No |
+| Firmware loading | No |
+
+> ⚠️ **Note**: Revision 3 has components on both sides: the ESP32-C3 module and LEDs are on the back. PCBWay selects **Top side** by default; with it, the back-side components are not assembled.
 
 > ⚠️ **Note**: If the manufacturer contacts you with questions or suggestions and you are unsure how to answer, feel free to email me at sergio.gasquez@gmail.com.
