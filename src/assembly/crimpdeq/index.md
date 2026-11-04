@@ -20,7 +20,9 @@ Most assembly steps are the same for PCB V1, V2, and V3. The main differences ar
   - Later V3 cases: 800 mAh 102530, 10 × 25 × 30 mm, with both leads leaving one 25 mm end
 - [KCD11 two-terminal switch](https://www.aliexpress.us/item/2255800787248498.html)
 - Insulated hookup wire and heat-shrink tubing
-- 4 × M2.5 screws (M2.5×10 for the V3 case)
+- 4 screws for the lid:
+  - Case `v3.1.0` and earlier: M2.5 screws (M2.5×10 for the V3 case)
+  - Later V3 cases: countersunk Phillips self-tapping screws sold as M2.5×10, measuring 2.4 mm across the thread, 4.8 mm across the head and 10.3 mm overall
 
 ### Tools
 
@@ -175,7 +177,8 @@ Turn the switch off before closing the case.
 
 1. Place the lid on the main enclosure.
    - On V3, align the lid's two LED holes over the RGB status LED and the red charging LED.
-2. Fasten it with the 4 × M2.5 screws.
+2. Fasten it with the 4 screws.
+   - On later V3 cases, the self-tapping screws cut their own thread in the case. Stop as soon as each head sits flush. When refitting a screw, turn it backwards until it drops into its existing thread before tightening it.
 
 <p style="text-align:center;"><img src="../../assets/crimpdeq_v3_side.jpg" alt="V3 case front wall with the USB-C port and power switch" width="45%"></p>
 
