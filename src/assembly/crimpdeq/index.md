@@ -153,11 +153,19 @@ Resolve any unexpected short or open connection before proceeding.
 In the V3 case, the front wall is the one with the USB-C and switch openings.
 
 1. Place the load cell in the main body with the white strain-gauge cover facing up and its wires toward the front wall.
-2. Route the load-cell wires under the battery position to the front of the case, where the load-cell pads will sit.
-3. Place the battery on top of the load cell, with its leads at the rear. Run the leads up behind the battery and forward along its side to the `B-` and `B+` pads.
+2. Route the load-cell wires to the front of the case, where the load-cell pads will sit:
+   - Case `v3.1.0` and earlier: run them under the battery position.
+   - Later V3 cases: run them forward from the strain-gauge cover, in front of the battery, then along the outer side of the support column nearest the load-cell pads.
+3. Place the battery with its leads at the rear:
+   - Case `v3.1.0` and earlier: lay it flat on top of the load cell.
+   - Later V3 cases: set its rear end on the two pads behind the load cell; its front rests on the strain-gauge cover.
+
+   Run the leads up behind the battery and forward along its side to the `B-` and `B+` pads.
 4. Press the KCD11 switch into the switch opening.
 5. Hold the PCB with the ESP32-C3 module and LEDs facing up. Tilt it to insert the USB-C connector into the front-wall opening, then lower the board onto its two support columns in front of the battery.
 6. Check that no wire sits on top of the support columns or the battery, where the lid clamps press.
+
+The photos below show case `v3.1.0`.
 
 <p style="text-align:center;"><img src="../../assets/crimpdeq_v3_assembly_3.jpg" alt="PCB V3 seated in the case above the battery" width="75%"></p>
 
