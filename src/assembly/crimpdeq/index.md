@@ -15,10 +15,14 @@ Most assembly steps are the same for PCB V1, V2, and V3. The main differences ar
 - [Crimpdeq 3D-printed case](./case.md) that matches your PCB revision
 - WH-C07 load cell, or a compatible load cell with similar dimensions
   - You can salvage one from a [crane scale](https://www.aliexpress.com/item/1005002719645426.html) ([Amazon alternative](https://www.amazon.es/dp/B08133JCM6)) or buy it separately.
-- [3.7 V, 2000 mAh LiPo battery](https://www.aliexpress.us/item/3256809404408618.html)
+- 3.7 V LiPo battery sized for your case release:
+  - Case `v3.1.0` and earlier: [2000 mAh, 10 × 34 × 50 mm](https://www.aliexpress.us/item/3256809404408618.html)
+  - Case `v3.2.0`: 800 mAh 102530, 10 × 25 × 30 mm, with both leads leaving one 25 mm end
 - [KCD11 two-terminal switch](https://www.aliexpress.us/item/2255800787248498.html)
 - Insulated hookup wire and heat-shrink tubing
-- 4 × M2.5 screws (M2.5×10 for the V3 case)
+- 4 screws for the lid:
+  - Case `v3.1.0` and earlier: M2.5 screws (M2.5×10 for the V3 case)
+  - Case `v3.2.0`: countersunk Phillips self-tapping screws sold as M2.5×10, measuring 2.4 mm across the thread, 4.8 mm across the head and 10.3 mm overall
 
 ### Tools
 
@@ -149,11 +153,19 @@ Resolve any unexpected short or open connection before proceeding.
 In the V3 case, the front wall is the one with the USB-C and switch openings.
 
 1. Place the load cell in the main body with the white strain-gauge cover facing up and its wires toward the front wall.
-2. Route the load-cell wires under the battery position to the front of the case, where the load-cell pads will sit.
-3. Place the battery on top of the load cell, with its leads at the rear. Run the leads up behind the battery and forward along its side to the `B-` and `B+` pads.
+2. Route the load-cell wires to the front of the case, where the load-cell pads will sit:
+   - Case `v3.1.0` and earlier: run them under the battery position.
+   - Case `v3.2.0`: run them forward from the strain-gauge cover, in front of the battery, then along the outer side of the support column nearest the load-cell pads.
+3. Place the battery with its leads at the rear:
+   - Case `v3.1.0` and earlier: lay it flat on top of the load cell.
+   - Case `v3.2.0`: set its rear end on the two pads behind the load cell; its front rests on the strain-gauge cover.
+
+   Run the leads up behind the battery and forward along its side to the `B-` and `B+` pads.
 4. Press the KCD11 switch into the switch opening.
 5. Hold the PCB with the ESP32-C3 module and LEDs facing up. Tilt it to insert the USB-C connector into the front-wall opening, then lower the board onto its two support columns in front of the battery.
 6. Check that no wire sits on top of the support columns or the battery, where the lid clamps press.
+
+The photos below show case `v3.1.0`.
 
 <p style="text-align:center;"><img src="../../assets/crimpdeq_v3_assembly_3.jpg" alt="PCB V3 seated in the case above the battery" width="75%"></p>
 
@@ -173,7 +185,8 @@ Turn the switch off before closing the case.
 
 1. Place the lid on the main enclosure.
    - On V3, align the lid's two LED holes over the RGB status LED and the red charging LED.
-2. Fasten it with the 4 × M2.5 screws.
+2. Fasten it with the 4 screws.
+   - On case `v3.2.0`, the self-tapping screws cut their own thread in the case. Stop as soon as each head sits flush. When refitting a screw, turn it backwards until it drops into its existing thread before tightening it.
 
 <p style="text-align:center;"><img src="../../assets/crimpdeq_v3_side.jpg" alt="V3 case front wall with the USB-C port and power switch" width="45%"></p>
 
