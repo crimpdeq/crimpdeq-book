@@ -39,18 +39,27 @@ probe-rs erase
 > ⚠️ **Note**: Erasing is only needed once. Avoid erasing routinely, or you will lose your [calibration values](../calibration/index.md).
 
 ### Build and Flash Your Device
-With a [custom runner](https://doc.rust-lang.org/cargo/reference/config.html#targettriplerunner) configured in `.cargo/config.toml`, you can build, flash, and open a serial monitor with:
+The [custom runner](https://doc.rust-lang.org/cargo/reference/config.html#targettriplerunner) configured in `.cargo/config.toml` builds, flashes, and starts the firmware with:
 ```bash
 cargo run --release
 ```
-This opens a serial monitor. Logging is off by default (`DEFMT_LOG = "off"` in `.cargo/config.toml`).
+Logging is off by default (`DEFMT_LOG = "off"` in `.cargo/config.toml`), so the command exits once the firmware starts.
 
-To see log messages, set the [log level](https://defmt.ferrous-systems.com/filtering) in `.cargo/config.toml` or when running the command:
+To see log messages, set the [log level](https://defmt.ferrous-systems.com/filtering) in `.cargo/config.toml` or when running the command. The runner then keeps a log monitor open:
 ```bash
 DEFMT_LOG=debug cargo run --release
 ```
 
-> ⚠️ **Note**: If your DevKit does not include USB-Serial-JTAG, flash over UART by updating the custom runner in `.cargo/config.toml` to use [`espflash`](https://github.com/esp-rs/espflash/tree/main/espflash#cargo-runner) instead of `probe-rs`.
+> ⚠️ **Note**: On release tags up to `v3.0.0`, `cargo run --release` opens a serial monitor even with logging off.
+
+> ⚠️ **Note**: If your DevKit does not include USB-Serial-JTAG, flash over UART by replacing the runner in `.cargo/config.toml` with [`espflash`](https://github.com/esp-rs/espflash/tree/main/espflash#cargo-runner) instead of `probe-rs`.
+
+### Try the Firmware Without a Load Cell
+On `main`, the `mock` feature simulates the load cell and battery, so you can test the firmware and apps on PCB V3 or on an [ESP32-C3 Rust board](https://github.com/esp-rs/esp-rust-board) without a load cell or battery:
+```bash
+cargo run --release --features mock
+```
+The simulated load cell repeats pulls up to 30 kg, the battery discharges to 20 % and charges back, and the device logs the idle timeout instead of going to sleep.
 
 ### Configuring Environment Variables
 

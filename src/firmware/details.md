@@ -13,6 +13,9 @@ This module implements the Bluetooth Low Energy (BLE) functionality:
 - Handles advertising and connections
 - Defines the Progressor service with data point and control point characteristics
 
+### `mock`
+This module simulates the load cell and battery for the `mock` build, which runs without them (see [Try the Firmware Without a Load Cell](./local.md#try-the-firmware-without-a-load-cell)). In that build, `mock_battery_task` replaces `battery_gauge_task`.
+
 ### `progressor`
 The `progressor` module implements the [Tindeq API](https://tindeq.com/progressor_api/) used for BLE communication between the ESP32-C3 and a smartphone.
 
