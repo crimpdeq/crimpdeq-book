@@ -16,17 +16,19 @@
 
 1. Connect to your Crimpdeq
    1. Launch the Crimpdeq app and grant the Bluetooth permission (Nearby devices on Android 12 and newer, location on Android 11 and older).
-   2. Tap **Scan** to pair with your device.
+   2. Tap **Scan**, then tap **Connect** next to your device.
    3. Once connected, tap the device status in the app bar to see the battery, voltage, and sample rate. The **Firmware** field shows the Progressor version that the device reports to apps (`2.0.4`), not the Crimpdeq firmware release.
 2. Add calibration points
    1. Open the **Calibration** tab.
    2. For each point:
      - Hang the corresponding load on the device (or leave it empty for zero).
      - Enter the weight value in the app and tap **Add Calibration Point**.
+     - Hold the weight still. The app adds the point once the load stays steady for one second, and reports when it does not settle.
    - **Recommended:** Add at least 2 points—**zero** (nothing hanging) and **full scale** (the maximum weight you expect to measure). The device supports up to 20 calibration points for finer accuracy.
 3. Check the result
-   1. After adding at least 2 points, the app displays the current calibration curve. Confirm it matches your expectations.
-   2. To discard a bad point, tap its delete icon. The device removes the point and refits the calibration to the remaining points (firmware `v3.x`).
+   1. After adding at least 2 points, the **Calibration Check** plots the points against the line the device applies and lists the error of each point. Two weights always fit the line, so add a point at a third weight to check the calibration; the app then shows the maximum and RMS error. Large errors point to a swinging load or a wrong weight value.
+   2. To discard a bad point, tap its remove icon and confirm. The device removes the point and refits the calibration to the remaining points (firmware `v3.x`).
+   3. To start over, tap **Reset Calibration To Default**. This restores the default calibration and deletes every stored point.
 
    ![Calibration Result](../assets/Screenshot_0.jpg)
 
