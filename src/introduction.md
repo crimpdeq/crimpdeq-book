@@ -25,7 +25,7 @@ These specs describe the current PCB V3 with its matching case and firmware.
   - 0.05 kg between 0 and 99 kg
   - 0.1 kg between 100 and 150 kg
 - Operating temperature: 0 to 40 C
-- Dimensions: 97 x 77 x 31 mm
+- Dimensions: 103.3 x 77.4 x 25.5 mm (case `v3.2.0`)
 - Uses the [Tindeq Progressor API](https://tindeq.com/progressor_api/)
 
 > ⚠️ **Warning**: Some values depend on the load cell used in this project. If you use a different load cell, those values may change.
