@@ -46,10 +46,10 @@ Firmware with calibration models, released after `v3.0.0`, lets you choose how t
 
 Loads within 2% of the load range of each other count as one. Start with the linear model and switch only when its residuals show a consistent bend, such as residuals that change sign around one load. A model with more parameters always fits its own points better, so judge it with weights that are not calibration points (see [Validate the Calibration](#validate-the-calibration)).
 
-- Select a model in the **Calibration Model** card. If the stored points do not support it, the device keeps the model in use and the app shows why.
+- Select a model in the **Calibration Model** card while no measurement is running. If the stored points do not support it, the device keeps the model in use and the app shows why.
 - When you remove or add a point that leaves the points short of what the model needs, the device stores the points but keeps measuring with the previous calibration, and the app shows that the points are not applied yet.
 - The app shows the **calibrated range**, from the lightest to the heaviest calibration load. Outside it, the device extends the curve straight with the slope at the nearest end. The **Measurements** tab flags readings outside the range as extrapolated.
-- **Tare** subtracts an attached load, such as a hangboard; the curve stays where it was calibrated. **Set Unloaded Zero** is for a device with nothing attached whose zero drifted: it re-anchors the curve at the current unloaded reading. The device rejects it when the reading is more than 1 kg from the calibrated zero.
+- **Tare** subtracts an attached load, such as a hangboard; the curve stays where it was calibrated. **Set Unloaded Zero** is for a device with nothing attached whose zero drifted: it re-anchors the curve at the current unloaded reading. Use it while no measurement is running. The device rejects it when the reading is more than 1 kg from the calibrated zero.
 - Firmware without calibration models offers only the linear model. The Tindeq and Frez apps receive readings converted by the model in use.
 
 ## Validate the Calibration
