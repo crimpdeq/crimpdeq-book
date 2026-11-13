@@ -5,7 +5,10 @@ This chapter describes the firmware for PCB V3. Firmware for PCB V1 and V2 uses 
 ## Code Structure
 
 ### `ads1220`
-This module implements the ADS1220 load-cell ADC driver over SPI. It configures the ADC for ratiometric measurements, selects the sampling rate (20 to 1000 SPS), tares the load cell, and fits the calibration factor from the calibration points.
+This module implements the ADS1220 load-cell ADC driver over SPI. It configures the ADC for ratiometric measurements, selects the sampling rate (20 to 1000 SPS), tares the load cell, and converts readings with the calibration in use.
+
+### `calibration` crate
+The [`calibration`](https://github.com/crimpdeq/crimpdeq-firmware/tree/main/calibration) crate fits the linear, quadratic and piecewise linear calibration models, converts readings, applies the rules for adding and removing points, and encodes the calibration flash record and BLE details. It has no hardware dependencies, so `cargo test-host` runs its tests on the computer. Its README documents the models, their data requirements, tare and zero semantics, extrapolation, the record and the BLE extension in full.
 
 ### `ble`
 This module implements the Bluetooth Low Energy (BLE) functionality:
@@ -20,7 +23,7 @@ This module simulates the load cell and battery for the `mock` build, which runs
 The `progressor` module implements the [Tindeq API](https://tindeq.com/progressor_api/) used for BLE communication between the ESP32-C3 and a smartphone.
 
 ### `storage`
-This module stores the calibration factor and the sampling rate in separate flash partitions, so they persist across reboots and writing one cannot erase the other.
+This module stores the calibration (model, curve and points) and the sampling rate in separate flash partitions, so they persist across reboots and writing one cannot erase the other. The calibration partition holds a log of versioned, CRC-checked records, so a write interrupted by a power cut keeps the previous calibration. The factor that firmware `v3.0.0` and earlier stored migrates to the same linear calibration, without points.
 
 ### Main Tasks
 The `main.rs` file defines several asynchronous tasks that run concurrently:
@@ -58,11 +61,16 @@ Crimpdeq adds these commands, which the Tindeq and Frez apps do not use:
 
 | Opcode | Command                 | Payload               | Response                                                                                                 |
 | ------ | ----------------------- | --------------------- | -------------------------------------------------------------------------------------------------------- |
-| `0x72` | Get calibration         | none                  | `0x05` with the calibration factor (`f32`), then one `0x06` per point with its raw value and weight in kg (`f32`, `f32`) |
-| `0x74` | Default calibration     | none                  | `0x05` with the default calibration factor; clears the calibration points                                 |
+| `0x72` | Get calibration         | none                  | `0x05` with the calibration factor (`f32`, NaN for a nonlinear model), then one `0x06` per point with its raw value and weight in kg (`f32`, `f32`) |
+| `0x74` | Default calibration     | none                  | `0x05` with the default calibration factor; restores the linear model and clears the calibration points  |
 | `0x75` | Set sample rate         | samples per second (`u16`) | `0x07` with the rate in use (`u16`), which stays unchanged for unsupported rates                       |
 | `0x76` | Get sample rate         | none                  | `0x07` with the rate in use (`u16`)                                                                      |
 | `0x77` | Get battery status      | none                  | `0x08` with the state of charge in percent (`u8`) and a charging flag (`u8`)                             |
 | `0x78` | Remove calibration point | point index (`u8`)   | If removed, the new calibration factor and points, then `0x09` with `1`; otherwise only `0x09` with `0`    |
+| `0x79` | Get calibration details | none                  | `0x0A` calibration details                                                                               |
+| `0x7A` | Set calibration model   | model (`u8`): 0 linear, 1 quadratic, 2 piecewise | Fits the model to the stored points and uses it if it fits, then the `0x0A` details    |
+| `0x7B` | Set zero                | none                  | With nothing attached, tares and re-anchors the curve at the unloaded reading, then the `0x0A` details   |
 
-The supported sample rates are 20, 45, 90, 175, 330, 600, and 1000 SPS. The sample rate commands and `0x77` and `0x78` need firmware `v3.x`.
+The supported sample rates are 20, 45, 90, 175, 330, 600, and 1000 SPS. The sample rate commands and `0x77` and `0x78` need firmware `v3.x`; `0x79` to `0x7B` need firmware with calibration models, released after `v3.0.0`.
+
+The calibration details are a sequence of `0x0A` notifications, each starting with its kind: the model, points and outcome of the last calibration command; the curve coefficients; the calibration coordinates and range; the calibration-fit residuals and the loads at the ends of the calibrated range; the load at the tare; one notification per point with its fitted load; and an end marker. The [calibration crate README](https://github.com/crimpdeq/crimpdeq-firmware/tree/main/calibration#ble) lists their layout. Measurement packets do not change, so the Tindeq and Frez apps receive readings converted by the model in use. Firmware without the models ignores `0x79` to `0x7B`.
