@@ -8,7 +8,7 @@ Starting with V2, the PCB, [firmware](../../firmware/index.md), and [case](./cas
 
 ## Revision 4 (Current)
 
-Revision 4 ([`v4.0.0`](https://github.com/crimpdeq/crimpdeq-pcb/releases/tag/v4.0.0)) is a 17 × 31.5 mm four-layer board with components on both sides. Its source is [`index.circuit.tsx`](https://github.com/crimpdeq/crimpdeq-pcb/blob/v4.0.0/index.circuit.tsx), and [tscircuit.crimpdeq.com](https://tscircuit.crimpdeq.com) shows the PCB, schematic, and 3D view of the latest design. It keeps the ADS1220 ADC, MAX17048 battery gauge, charging while switched off, and RGB status LED of Revision 3. Compared with Revision 3, it:
+Revision 4 ([`v4.0.0`](https://github.com/crimpdeq/crimpdeq-pcb/releases/tag/v4.0.0)) is a 17 × 31.5 mm four-layer board with components on both sides. Its source is [`index.circuit.tsx`](https://github.com/crimpdeq/crimpdeq-pcb/blob/v4.0.0/index.circuit.tsx). It keeps the ADS1220 ADC, MAX17048 battery gauge, charging while switched off, and RGB status LED of Revision 3. Compared with Revision 3, it:
 
 - Puts the ESP32-C3 module (with its antenna at the board edge), the USB-C connector, and both LEDs on the top side, and the charger, power path, 3.3 V regulator, battery gauge, and ADC on the bottom side.
 - Powers the load cell only while the ADC converts: the ADS1220's internal low-side switch connects `E-` to ground, so the load cell draws no current while the ADC is powered down.
@@ -23,6 +23,10 @@ The pads are plated through holes. The `J3` load-cell labels are printed on the 
 ![PCB Revision 4 pad layout](../../assets/pcb_v4_pinout.png)
 
 The drawings are the assembly drawings from the [`v4.0.0` release](https://github.com/crimpdeq/crimpdeq-pcb/releases/tag/v4.0.0), with the pad labels added. The bottom view is mirrored, as seen from below.
+
+### Online Viewer
+
+Explore the PCB, schematic, and 3D model in your browser at **[tscircuit.crimpdeq.com](https://tscircuit.crimpdeq.com/)**. The viewer is rebuilt from the `main` branch of the repository, so it can show changes made after the latest release.
 
 ## Revision 3
 

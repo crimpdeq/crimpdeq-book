@@ -14,7 +14,7 @@ These specs describe the current PCB V4 with its matching case and firmware.
 - ADS1220 24-bit load-cell ADC
 - Communicates via Bluetooth Low Energy (BLE)
 - Open-source firmware written in Rust
-- Open-source PCB design
+- Open-source PCB design, viewable online at [tscircuit.crimpdeq.com](https://tscircuit.crimpdeq.com/)
 - Open-source 3D-printable case design
 - Automatic sleep when inactive
 - Compatible with the Tindeq Progressor app ([Android](https://play.google.com/store/apps/details?id=com.progressor) | [iOS](https://apps.apple.com/app/tindeq-progressor/id1380412428))
