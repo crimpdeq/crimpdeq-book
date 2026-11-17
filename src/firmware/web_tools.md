@@ -22,3 +22,13 @@ This chapter covers how to flash your device with a pre-built binary.
 7. Click `Program`.
 
 ![Flashing with ESPTool](../assets/esptool.png)
+
+## If the Flasher Cannot Connect
+
+If the serial port does not appear, or the flasher cannot connect to it:
+
+1. Make sure the device is awake. A sleeping device (status LED off) does not show its serial port. On PCB V3 and V4, turn the switch off and reconnect the USB-C cable: with the switch off, connecting USB restarts the device.
+2. If it still does not connect, put the ESP32-C3 into download mode. PCB V4 has `EN`, `GND`, and `BOOT` pads for this on its bottom side, under the ESP32-C3 module (see the [pad layout](../assembly/crimpdeq/pcb.md#revision-4-current)), so take the board out of the case first. Either:
+   - Hold `BOOT` to `GND` and briefly connect `EN` to `GND`. The pads are 1.5 mm apart, so tweezers can bridge neighboring pads.
+   - With the switch off and USB disconnected, hold `BOOT` to `GND` while connecting the USB-C cable.
+3. Flash the firmware as described above, then disconnect and reconnect USB with the switch off, or briefly connect `EN` to `GND`, to start it.

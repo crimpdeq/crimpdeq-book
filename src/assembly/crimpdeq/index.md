@@ -2,7 +2,7 @@
 
 This chapter shows how to assemble a Crimpdeq using the custom PCB and 3D-printed case.
 
-Most assembly steps are the same for PCB V1, V2, and V3. The main differences are the external wiring pad layout, especially the battery/switch wiring, and how the PCB sits in the case.
+Most assembly steps are the same for PCB V1 to V4. The main differences are the external wiring pad layout, especially the battery/switch wiring, and how the parts sit in the case.
 
 <p style="text-align:center;"><img src="../../assets/Crimpdeqs_v3.jpg" alt="Assembled Crimpdeq V3" width="90%"></p>
 
@@ -17,12 +17,13 @@ Most assembly steps are the same for PCB V1, V2, and V3. The main differences ar
   - You can salvage one from a [crane scale](https://www.aliexpress.com/item/1005002719645426.html) ([Amazon alternative](https://www.amazon.es/dp/B08133JCM6)) or buy it separately.
 - 3.7 V LiPo battery sized for your case release:
   - Case `v3.1.0` and earlier: [2000 mAh, 10 × 34 × 50 mm](https://www.aliexpress.us/item/3256809404408618.html)
-  - Case `v3.2.0`: 800 mAh 102530, 10 × 25 × 30 mm, with both leads leaving one 25 mm end
+  - Case `v3.2.0` and `v4.0.0`: 800 mAh 102530, 10 × 25 × 30 mm with its protection board, with both leads leaving one 25 mm end
 - [KCD11 two-terminal switch](https://www.aliexpress.us/item/2255800787248498.html)
 - Insulated hookup wire and heat-shrink tubing
+  - The case `v4.0.0` wire routes are sized for 24 AWG silicone wire.
 - 4 screws for the lid:
   - Case `v3.1.0` and earlier: M2.5 screws (M2.5×10 for the V3 case)
-  - Case `v3.2.0`: countersunk Phillips self-tapping screws sold as M2.5×10, measuring 2.4 mm across the thread, 4.8 mm across the head and 10.3 mm overall
+  - Case `v3.2.0` and `v4.0.0`: countersunk Phillips self-tapping screws sold as M2.5×10, measuring 2.4 mm across the thread, 4.8 mm across the head and 10.3 mm overall
 
 ### Tools
 
@@ -43,7 +44,11 @@ Before soldering, identify which PCB layout you have and follow the matching wir
 
 ![Crimpdeq PCB V3 pad layout](../../assets/pcb_v3_pinout.png)
 
-The photos in this chapter show a V1 or V3 PCB, as noted in each caption. Use the tables below—not the wire positions in the photos—to connect a V2 PCB.
+**PCB V4** has eight plated through-hole pads along its two long edges, next to the USB-C connector. With the top side up (ESP32-C3 module, USB-C connector, and LEDs) and the USB-C connector toward you, the load-cell column `J3` is on the left (`E+`, `S+`, `S-`, `E-`, from the module end) and the battery/switch column `J4` is on the right (`SW-`, `SW+`, `B+`, `B-`). The `J3` labels are printed on the bottom side only; the `J4` labels are on both sides. The bottom side also has the `EN`, `GND`, and `BOOT` pads for [download-mode recovery](../../firmware/web_tools.md#if-the-flasher-cannot-connect).
+
+![Crimpdeq PCB V4 pad layout](../../assets/pcb_v4_pinout.png)
+
+The photos in this chapter show a V1 or V3 PCB, as noted in each caption. Use the tables below—not the wire positions in the photos—to connect a V2 or V4 PCB.
 
 ## 3. Solder the Connections
 
@@ -51,12 +56,12 @@ The photos in this chapter show a V1 or V3 PCB, as noted in each caption. Use th
 
 ### Load cell
 
-| Function            | Typical wire color | PCB V1 pad | PCB V2 pad | PCB V3 pad |
-| ------------------- | ------------------ | ---------- | ---------- | ---------- |
-| Excitation positive | Red                | `E+ (15)`  | `E+`       | `E+`       |
-| Excitation negative | Black              | `E- (14)`  | `E-`       | `E-`       |
-| Signal positive     | Green or blue      | `S+ (12)`  | `A+`       | `A+`       |
-| Signal negative     | White              | `S- (13)`  | `A-`       | `A-`       |
+| Function            | Typical wire color | PCB V1 pad | PCB V2 pad | PCB V3 pad | PCB V4 pad |
+| ------------------- | ------------------ | ---------- | ---------- | ---------- | ---------- |
+| Excitation positive | Red                | `E+ (15)`  | `E+`       | `E+`       | `E+`       |
+| Excitation negative | Black              | `E- (14)`  | `E-`       | `E-`       | `E-`       |
+| Signal positive     | Green or blue      | `S+ (12)`  | `A+`       | `A+`       | `S+`       |
+| Signal negative     | White              | `S- (13)`  | `A-`       | `A-`       | `S-`       |
 
 > ⚠️ **Note**: Wire colors are not guaranteed. Confirm the labels or documentation for your load cell before soldering.
 
@@ -111,16 +116,22 @@ Like V2, V3 keeps `B+` connected to the battery while the switch is off, so the 
 
 <p style="text-align:center;"><img src="../../assets/crimpdeq_v3_assembly_2.jpg" alt="Switch wires from SW+ and SW- fed through the switch opening of the V3 case" width="75%"></p>
 
+#### PCB V4
+
+The battery and switch connections are the same as on V3: `battery + → B+`, `battery − → B-`, and `SW+ → switch → SW-`. On V4, `SW+` is tied to `B+` on the board.
+
+The V4 pads are plated holes. In the case, every wire reaches its pad from below, so insert each stripped wire from the bottom side, solder it, and trim it flush on the top side. Cut the wires long enough to follow the routes in [Install Everything in the Case](#pcb-v4-1).
+
 ### Check before connecting the battery
 
 With both battery leads still disconnected, use a multimeter in continuity or resistance mode to check that:
 
-- Battery positive is not shorted to ground (`B+` to `B-` on V1 and V3, or `VBAT` to `E-` on V2).
+- Battery positive is not shorted to ground (`B+` to `B-` on V1, V3, and V4, or `VBAT` to `E-` on V2).
 - Each load-cell wire reaches the correct pad for your PCB revision.
 - The switch opens and closes its path.
   - On V1, check between the free switch terminal and `B+`.
   - On V2, check between `VBAT` and `SW+`.
-  - On V3, check between `SW+` and `SW-`.
+  - On V3 and V4, check between `SW+` and `SW-`.
 
 Resolve any unexpected short or open connection before proceeding.
 
@@ -128,7 +139,7 @@ Resolve any unexpected short or open connection before proceeding.
 
 - **PCB V1:** connect battery positive (red) to the free switch terminal, then connect battery negative (black) to `B- (16)`.
 - **PCB V2:** connect battery negative (black) to the shared `E-` connection, then connect battery positive (red) to `VBAT`.
-- **PCB V3:** connect battery negative (black) to `B-`, then connect battery positive (red) to `B+`.
+- **PCB V3 and V4:** connect battery negative (black) to `B-`, then connect battery positive (red) to `B+`.
 
 ## 4. Install Everything in the Case
 
@@ -171,22 +182,34 @@ The photos below show case `v3.1.0`.
 
 <p style="text-align:center;"><img src="../../assets/crimpdeq_v3_assembly_4.jpg" alt="PCB V3 seated with its USB-C connector in the front wall" width="75%"></p>
 
+### PCB V4
+
+In the V4 case, the front wall is the one with the USB-C and switch openings; left and right below are as seen from the front. Install the parts in this order: load cell, switch, battery, PCB. The [case model](./case.md#revision-4-current) shows where each part sits.
+
+1. Place the load cell with the white strain-gauge cover facing the floor and its wires toward the front wall. Fit its four edge notches over the floor pins; it rests on four floor pads, with its wires running under it to the front.
+2. Press the KCD11 switch into its opening, right of the USB-C opening. Bend its wires up behind the solder joints.
+3. Lay the battery flat on the top face of the load cell, with the end that its leads leave toward the front wall. If the leads leave off center, turn the battery over so that they leave right of center. Run them right along the front of the battery, through the recess in the PCB support column.
+4. Hold the PCB with the ESP32-C3 module, USB-C connector, and LEDs facing up. Lower it straight down: the USB-C connector drops into the front-wall opening, which is open at the top, and the board rests on the two fingers of the support column, between the front screw posts.
+5. Check that each wire reaches its pad from below along its lane: the load-cell wires left of the support column to `J3`, and the battery leads right of it to `J4`. The switch wires run over the battery beside the board, then forward and down to `SW+` and `SW-`.
+6. Check that no wire sits on top of the board or the USB-C connector, where the lid presses.
+
 ## 5. Verify the Powered Wiring
 
 With USB still disconnected, use the multimeter in DC voltage mode to confirm the polarity and switch behavior:
 
 - **PCB V1:** place the black probe on `B-` and the red probe on `B+`. The meter should show battery voltage only while the switch is on.
 - **PCB V2:** place the black probe on `E-`. With the red probe, confirm that `VBAT` always shows battery voltage and `SW+` shows battery voltage only while the switch is on.
-- **PCB V3:** place the black probe on `B-`. With the red probe, confirm that `B+` always shows battery voltage and `SW-` shows battery voltage only while the switch is on.
+- **PCB V3 and V4:** place the black probe on `B-`. With the red probe, confirm that `B+` always shows battery voltage and `SW-` shows battery voltage only while the switch is on.
 
 Turn the switch off before closing the case.
 
 ## 6. Close the Case
 
 1. Place the lid on the main enclosure.
-   - On V3, align the lid's two LED holes over the RGB status LED and the red charging LED.
+   - On V3 and V4, align the lid's two LED holes over the RGB status LED and the red charging LED.
+   - On case `v4.0.0`, the lip under the lid drops inside the main walls and centers the lid.
 2. Fasten it with the 4 screws.
-   - On case `v3.2.0`, the self-tapping screws cut their own thread in the case. Stop as soon as each head sits flush. When refitting a screw, turn it backwards until it drops into its existing thread before tightening it.
+   - On case `v3.2.0` and `v4.0.0`, the self-tapping screws cut their own thread in the case. Drive them with a hand screwdriver and stop as soon as each head sits flush; on case `v4.0.0`, the countersunk heads snap off under more torque. When refitting a screw, turn it backwards until it drops into its existing thread before tightening it.
 
 <p style="text-align:center;"><img src="../../assets/crimpdeq_v3_side.jpg" alt="V3 case front wall with the USB-C port and power switch" width="45%"></p>
 

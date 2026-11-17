@@ -12,7 +12,7 @@ Choose the one that matches your tools, budget, and how much assembly work you w
 
 This model uses a [custom PCB](./crimpdeq/pcb.md) and a [custom 3D-printed case](./crimpdeq/case.md).
 
-It is the cleanest and easiest version to assemble, and the final result is more compact and polished. The assembly guide covers PCB V1, V2, and V3, including their wiring differences. New builds should use PCB V3.
+It is the cleanest and easiest version to assemble, and the final result is more compact and polished. The assembly guide covers PCB V1 to V4, including their wiring differences. New builds should use PCB V4. The photo shows a V3 build.
 
 Follow the [Crimpdeq Assembly](./crimpdeq/index.md) guide to build this model.
 
