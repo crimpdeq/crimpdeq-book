@@ -27,7 +27,7 @@
    - **Recommended:** Add at least 2 points—**zero** (nothing hanging) and **full scale** (the maximum weight you expect to measure). The device supports up to 20 calibration points for finer accuracy.
 3. Check the result
    1. After adding at least 2 points, the **Calibration Check** plots the points against the curve the device applies and lists the fitted load and residual of each point. Two weights always fit a line, so add a point at a third weight to check a linear calibration; the app then shows the largest and RMS residual. Large residuals point to a swinging load or a wrong weight value. Residuals show how well the curve follows the calibration points, not the accuracy at other loads.
-   2. To discard a bad point, tap its remove icon and confirm. The device removes the point and refits the calibration to the remaining points (firmware `v3.x`).
+   2. To discard a bad point, tap its remove icon and confirm. The device removes the point and refits the calibration to the remaining points (firmware `v3.x` or newer).
    3. To start over, tap **Reset Calibration To Default**. This restores the default linear calibration and deletes every stored point.
 
    ![Calibration Result](../assets/Screenshot_0.jpg)
@@ -36,7 +36,7 @@ Adding more calibration points (up to 20) improves measurement accuracy across t
 
 ## Calibration Models
 
-Firmware with calibration models, released after `v3.0.0`, lets you choose how the device converts readings. The device fits the model to its points; the app shows the model the device reports in use.
+Firmware with calibration models (`v3.1.0` or newer for PCB V3, `v4.x` for PCB V4) and Crimpdeq app `v0.6.0` or newer let you choose how the device converts readings. The device fits the model to its points; the app shows the model the device reports in use.
 
 | Model            | Use                                                        | Needs                                        |
 | ---------------- | ---------------------------------------------------------- | -------------------------------------------- |
@@ -66,4 +66,4 @@ Repeat the check after a firmware update, a large temperature change, or a shock
 
 ## Sample Rate
 
-With firmware `v3.x`, the **Measurements** tab lets you choose the sample rate (20 to 1000 SPS) while no measurement is running. The device keeps the rate across reboots, and the Tindeq and Frez apps receive data at that rate.
+With firmware `v3.x` or newer, the **Measurements** tab lets you choose the sample rate (20 to 1000 SPS) while no measurement is running. The device keeps the rate across reboots, and the Tindeq and Frez apps receive data at that rate.

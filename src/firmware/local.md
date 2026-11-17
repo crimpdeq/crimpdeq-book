@@ -14,10 +14,10 @@ To build and upload the firmware, install:
 
 ## How to Build the Firmware
 
-The `main` branch of the [firmware repository](https://github.com/crimpdeq/crimpdeq-firmware) targets PCB V3. For an older PCB, check out the [release tag for your revision](./index.md#choose-the-firmware-for-your-pcb) first, for example:
+The `main` branch of the [firmware repository](https://github.com/crimpdeq/crimpdeq-firmware) targets PCB V4. For an older PCB, check out the [release tag for your revision](./index.md#choose-the-firmware-for-your-pcb) first, for example:
 
 ```bash
-git checkout v2.1.0
+git checkout v3.1.0
 ```
 
 To build the firmware, run:
@@ -52,10 +52,12 @@ DEFMT_LOG=debug cargo run --release
 
 > ⚠️ **Note**: On release tags up to `v3.0.0`, `cargo run --release` opens a serial monitor even with logging off.
 
+> ⚠️ **Note**: If flashing fails to connect to the device, see [If the flasher cannot connect](./web_tools.md#if-the-flasher-cannot-connect).
+
 > ⚠️ **Note**: If your DevKit does not include USB-Serial-JTAG, flash over UART by replacing the runner in `.cargo/config.toml` with [`espflash`](https://github.com/esp-rs/espflash/tree/main/espflash#cargo-runner) instead of `probe-rs`.
 
 ### Try the Firmware Without a Load Cell
-On `main`, the `mock` feature simulates the load cell and battery, so you can test the firmware and apps on PCB V3 or on an [ESP32-C3 Rust board](https://github.com/esp-rs/esp-rust-board) without a load cell or battery:
+From firmware `v3.1.0`, the `mock` feature simulates the load cell and battery, so you can test the firmware and apps without a load cell or battery on the PCB of the release (V3 for `v3.1.0`, V4 for `v4.x`) or on an [ESP32-C3 Rust board](https://github.com/esp-rs/esp-rust-board):
 ```bash
 cargo run --release --features mock
 ```
